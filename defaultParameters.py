@@ -1,0 +1,1 @@
+defaultParams = {"stopLoss" : 0.10, "TH" : -1, "minTakeProfit" : 0.02, "takeProfitMul" : 1., "MaxBuys" : 4, "comission": 0.001, "BankPart" : 0.249, "partPower" : 0, "pumpPowerScale":1, "highLevels" : [0.04, 0.3, 0.5, 0.7, 0.95], "retLevels" : [-0.02, -0.007, 0.001, 0.007, 0.017, 0.04], "lastTopFrames": 1, "topPreds":0.0, "ITERS" : 1200, "pairProbPow" : 0}

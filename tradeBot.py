@@ -326,12 +326,12 @@ class TradeBot(): #class to trade stocks using predicts from trained models
               print(response)
               bSoldStaledPositions = True
 
-          if bSoldStaledPositions: #wait, update info and run again
-            return 1
+        if bSoldStaledPositions: #wait, update info and run again
+          return 1
 
       bAnyPositions = False
-      for inst in self.instActions[accountNum]:
-        for accountNum in range(len(self.accountIDs)):
+      for accountNum in range(len(self.accountIDs)):
+        for inst in self.instActions[accountNum]:
           if self.instActions[accountNum][inst]["position"] > 0:
             bAnyPositions = True
       if not bAnyPositions:
@@ -380,6 +380,6 @@ class TradeBot(): #class to trade stocks using predicts from trained models
     return 0
 
 if __name__ == "__main__":
-	pass
+	bot = TradeBot()
 	
 	

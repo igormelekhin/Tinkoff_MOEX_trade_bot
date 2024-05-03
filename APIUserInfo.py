@@ -22,8 +22,8 @@ def getToken():
     return ""
 
 def getAppname():
-  if "TINKOFF_APPNAME" in os.environ:
-    return os.environ["TINKOFF_APPNAME"]
+  if "TINKOFF_INVEST_APPNAME" in os.environ:
+    return os.environ["TINKOFF_INVEST_APPNAME"]
   else:
     return ""
 

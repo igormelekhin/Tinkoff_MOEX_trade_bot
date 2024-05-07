@@ -23,10 +23,10 @@ def catBoostTrain(X, Y, X_val, Y_val, X_test, trainingParams, libSpecificParams)
       cat = CatBoostRegressor(iterations=params["ITERS"], loss_function=params["LOSS"], use_best_model=True, thread_count=6, random_seed=params["SEED"], **libSpecificParams)
     sample_weight = np.ones(len(Y))
     if ("CLASS_WEIGHT" in trainingParams) and (trainingParams["CLASS_WEIGHT"] > 1):
-        w=trainingParams["CLASS_WEIGHT"]
+        w = trainingParams["CLASS_WEIGHT"]
         for i in range(len(Y)):
-            if Y[i]==1:
-                sample_weight[i]=w
+            if Y[i] == 1:
+                sample_weight[i] = w
     cat_feats = [] #handle str and other features
     for i in range(len(X[0])):
         if type(X[0][i]) == str:
@@ -174,7 +174,7 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 					inst = buyInfo["frameInfo"]["inst"]
 					instInfo = self.featStorage.instInfo[inst]
 					frameInd = buyInfo["frameInfo"]["frameInd"]
-					ticker = self.featStorage.figi2inst[inst].ticker
+					ticker = self.featStorage.instMetainfo[inst].ticker
 
 					instStats.setdefault(ticker, {"boughtTimes" : 0, "totalResult" : 1})
 					instStats[ticker]["boughtTimes"] += 1
@@ -264,8 +264,8 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
       			
 			trainLen = len(train)
 			testLen = len(test)
-			#datasets preparation for the current train/test fold for highs and returns.
-			#train
+      #datasets preparation for the current train/test fold for highs and returns.
+      #train
 			X_train, _ = self.featStorage.collectDataWithDatesList(self.dateToXFrames, train, "x", needFullInfo=False)
 			Y_train_ret, _ = self.featStorage.collectDataWithDatesList(self.dateToYRetFrames, train, "y", needFullInfo=False)
 			Y_train_high, _ = self.featStorage.collectDataWithDatesList(self.dateToYHighFrames, train, "y", needFullInfo=False)
@@ -306,13 +306,13 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 			#training for returns
 			Y_preds_ret, modelClass_ret = catBoostTrain(X_train, Y_train_ret, X_test, Y_test_ret, X_test, trainingParams,libSpecificParams)
 
-			#training for highs
+      #training for highs
 			Y_preds_high, modelClass_high = catBoostTrain(X_train, Y_train_high, X_test, Y_test_high, X_test, trainingParams,libSpecificParams)
 
-			#probabilities of pairs (not used)
+      #probabilities of pairs (not used)
 			Y_pair_probs = np.ones((len(X_test), len(currentParams["highLevels"]) + 1, len(currentParams["retLevels"]) + 1 + 1))
 
-			#calculation of optimal TP and expected results according to predicted probability densities of highs and returns
+      #calculation of optimal TP and expected results according to predicted probability densities of highs and returns
 			predRets, predTPs = self.calcOptimalTPandProfit(currentParams, Y_preds_ret, Y_preds_high, Y_info_test_ret, Y_pair_probs) #with pairs
 			expectedReturns.extend(predRets)
 			optimalTPs.extend(predTPs)
@@ -325,8 +325,8 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 			bestIters[-1].append(modelClass_ret.get_best_iteration())
 			bestIters[-1].append(modelClass_high.get_best_iteration())
 			
-			#backtest day-by-day simulation accoring to optimal TPs and expected returns
-			backtestOutcome, backtestHistory, backtestRefs, newBuysOutcomes, newDayOutcomes, newExpectedOutcomes, newOptimalTPs, newLogs2File = self.runBacktest(currentParams, test, self.dateToYRetFrames, predRets, predTPs, refs, logFile=logFile)
+      #backtest day-by-day simulation accoring to optimal TPs and expected returns
+			backtestOutcome, backtestHistory, backtestRefs, newBuysOutcomes, newDayOutcomes, newExpectedOutcomes, newOptimalTPs, newLogs2File = self.runBacktest(currentParams, test, self.dateToYRetFrames, predRets, predTPs, refs, logFile=logFile, verb=verb)
 			logs2File += newLogs2File
 
 			buysOutcomes.extend(newBuysOutcomes)
@@ -352,9 +352,9 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 		metricsHigh =  np.array(metricsHigh)
 
 		print("ret_metrics {:.4f}: {:.3f}% - {:.3f}".format(metricsRet.mean(), metricsRet.min(), metricsRet.max()))
-		#print("ret_metrics {:.4f}: {:.3f}% - {:.3f}".format(metricsRet.prod()**(1/len(metricsRet)), metricsRet.min(), metricsRet.max()))
+		#print("ret_metrics {:.4f}: {:.3f}% - {:.3f}".format(losses.prod()**(1/len(losses)), losses.min(), losses.max()))
 		print("high_metrics {:.4f}: {:.3f}% - {:.3f}".format(metricsHigh.mean(), metricsHigh.min(), metricsHigh.max()))
-		#print("high_metrics {:.4f}: {:.3f}% - {:.3f}".format(metricsHigh.prod()**(1/len(metricsHigh)), metricsHigh.min(), metricsHigh.max()))
+		#print("high_metrics {:.4f}: {:.3f}% - {:.3f}".format(losses2.prod()**(1/len(losses2)), losses2.min(), losses2.max()))
 		plt.figure()
 		plt.hist(metricsRet, color='g')
 		plt.title("ret_metrics")
@@ -466,24 +466,61 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 		ind = 0
 		indBase = ind
 		instructions = []
-		buys, ind = self.calcBuysAndBankParts(currentParams, dateToXPredFrames[dates[-1]], predRets, predTPs, ind, 1, -2)
-		for buy in buys:
-			buyInfo = buy[1]
-			inst = buyInfo["frameInfo"]["inst"]
-			instInfo = self.featStorage.instInfo[inst]
-			frameInd = buyInfo["frameInfo"]["frameInd"]
-			ticker = self.featStorage.instMetainfo[inst].ticker
-			buyPrice = instInfo["open"][frameInd] * 0.995
-			sellPrice = instInfo["open"][frameInd] * (1+buy[1]["TP"])
-			stopLoss = buyPrice * (1 - currentParams["stopLoss"])
-			description = "Buy " + ticker + "for {:.2f}, sell for {:.2f}({:+.2f}%)".format(buyPrice, sellPrice, 100*buy[1]["TP"]) + " Bank part " + str(buy[1]["bankPart"]) + "Expected result {:+.2f}% Stop Loss {:.2f}({:+.2f}%)".format(100 * buy[0], stopLoss, -100*currentParams["stopLoss"])
-			if verb > 0:
-				print(description)
-			instructions.append({"ticker" : ticker, "figi" : inst, "buyPrice" : buyPrice, "sellPrice" : sellPrice, "stopLoss" : stopLoss, "bankPart" : buy[1]["bankPart"], "description" : description})
+		history = [1]
+		for dateInd in range(len(dates)):
+			bank = history[-1]
+			stDayOutcome = str(dates[dateInd])[:10]
+			buys, ind = self.calcBuysAndBankParts(currentParams, dateToXPredFrames[dates[dateInd]], predRets, predTPs, ind, 1, -2)
+			instructionsForToday = []
+			for buy in buys:
+				buyInfo = buy[1]
+				inst = buyInfo["frameInfo"]["inst"]
+				instInfo = self.featStorage.instInfo[inst]
+				frameInd = buyInfo["frameInfo"]["frameInd"]
+				ticker = self.featStorage.instMetainfo[inst].ticker
+				buyPrice = instInfo["open"][frameInd] * 1.005
+				sellPrice = instInfo["open"][frameInd] * (1+buy[1]["TP"])
+				stopLoss = buyPrice * (1 - currentParams["stopLoss"])
+				description = "Buy " + ticker + "for {:.2f}, sell for {:.2f}({:+.2f}%)".format(buyPrice, sellPrice, 100*buy[1]["TP"]) + " Bank part {:.2f}".format(buy[1]["bankPart"]) + " Expected result {:+.2f}% Stop Loss {:.2f}({:+.2f}%)".format(100 * buy[0], stopLoss, -100*currentParams["stopLoss"])
+				instructionsForToday.append({"ticker" : ticker, "figi" : inst, "buyPrice" : buyPrice, "sellPrice" : sellPrice, "stopLoss" : stopLoss, "bankPart" : buy[1]["bankPart"], "day" : dates[dateInd], "description" : description})
 
-			o, h, l, c = instInfo["open"][frameInd], instInfo["high"][frameInd+1], instInfo["low"][frameInd+1], instInfo["close"][frameInd+1]
-			TAKE_PROFIT = max(currentParams["minTakeProfit"], buyInfo["TP"])
-			frameInd = buyInfo["frameInd"]
+				if dateInd < len(dates) - 1: #if date is not last - it have results
+					o, h, l, c = instInfo["open"][frameInd], instInfo["high"][frameInd+1], instInfo["low"][frameInd+1], instInfo["close"][frameInd+1]
+					STOP_LOSS = params["stopLoss"]
+					TAKE_PROFIT = max(currentParams["minTakeProfit"], buyInfo["TP"])
+					
+					if (l / o) - 1 < -STOP_LOSS:
+						outcome = 1 - STOP_LOSS
+						instructionsForToday[-1]["outcomeType"] = "SL"
+					elif (h / o) - 1 > TAKE_PROFIT:
+						outcome = 1 + TAKE_PROFIT
+						instructionsForToday[-1]["outcomeType"] = "TP"
+					else:
+						outcome = c / o
+						instructionsForToday[-1]["outcomeType"] = "--"
+					instructionsForToday[-1]["outcome"] = outcome
+					bankTook = buy[1]["bankPart"] * history[-1]
+					bank -= bankTook
+					bankTook *= 1 - params["comission"]
+					bankGot = bankTook * outcome
+					bankGot *= 1 - params["comission"]
+					bank += bankGot
+				else:
+					if verb > 0:
+						print(description)
+			instructions.extend(instructionsForToday)
+			history.append(bank)
+			if (verb > 0) and (dateInd < len(dates) - 1):
+				stDayOutcome += " {:+.2f}% ({:.3f})".format(100 * (history[-1] / history[-2] - 1), history[-1]) + "\n"
+				for instruction in instructionsForToday:
+					stDayOutcome += "{:+.2f}%".format(100 * (instruction["outcome"] - 1)) + " " + instruction["outcomeType"] + " " +instruction["description"] + "\n"
+				print(stDayOutcome + "\n")
+		if (verb > 0) and (len(dates) > 1):
+			plt.plot(history)
+			print()
+			print("Resulting bank -", history[-1])
+
+
 		return instructions
 
 	############################################################################################################

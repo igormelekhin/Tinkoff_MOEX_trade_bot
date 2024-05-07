@@ -161,8 +161,9 @@ class TradeBot(): #class to trade stocks using predicts from trained models
         self.instActions[accountNum][predict["figi"]]["position"] = 0
         self.instActions[accountNum][predict["figi"]]["buyOrder"] = None
         self.instActions[accountNum][predict["figi"]]["sellOrder"] = None
+        self.instActions[accountNum][predict["figi"]]["bought"] = False
       for position in self.positions[accountNum].securities:
-        self.instActions[accountNum].setdefault(position.figi, {"buyOrder" : None, "sellOrder" : None})
+        self.instActions[accountNum].setdefault(position.figi, {"buyOrder" : None, "sellOrder" : None, "bought" : True})
         self.instActions[accountNum][position.figi]["position"] = position.balance + position.blocked
       for order in self.orders[accountNum]:
         if order.lots_executed >= order.lots_requested: continue
@@ -238,7 +239,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
             bank = money.units + money.nano * 10**(-9)
         #make required buy and sell orders
         for inst in self.instActions[accountNum]:
-          if (self.instActions[accountNum][inst]["buyOrder"] is None) and (self.instActions[accountNum][inst]["position"] == 0):
+          if (self.instActions[accountNum][inst]["buyOrder"] is None) and (self.instActions[accountNum][inst]["position"] == 0) and (self.instActions[accountNum][inst]["bought"] == False):
             #get bank part and appropriate lots amount
             buyLots = int((bank * self.instActions[accountNum][inst]["predict"]["bankPart"] / self.instActions[accountNum][inst]["predict"]["buyPrice"]) / self.data.instMetainfo[inst].lot)
             if buyLots > 0:
@@ -256,6 +257,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
               print(response)
           #buy order fullfilled
           if (self.instActions[accountNum][inst]["sellOrder"] is None) and (self.instActions[accountNum][inst]["buyOrder"] is None) and (self.instActions[accountNum][inst]["position"] > 0):
+            self.instActions[accountNum][inst]["bought"] = True
             sellLots = self.instActions[accountNum][inst]["position"] // self.data.instMetainfo[inst].lot
             if sellLots > 0:
               orderID = str(uuid.uuid4())
@@ -339,6 +341,53 @@ class TradeBot(): #class to trade stocks using predicts from trained models
         return 60 * 60 * 2
 
     return 60 * 10
+
+  ############################################################################################################
+
+  def getOperationHistory(self):
+    operationHistories = []
+    with tinkoff.invest.Client(self.token, target=tinkoff.invest.constants.INVEST_GRPC_API_SANDBOX, app_name = self.app_name) as client:
+      for accountNum in range(len(self.accountIDs)):
+        response = client.operations.get_operations(account_id = self.accountIDs[accountNum])
+        actions = []
+        operationHistories.append({"totalMoney" : 0, "actions" : actions, "dayResults" : {}})
+        lastBuys = {}
+        for operation in response.operations:
+          if operation.type == "Завод денежных средств":
+            operationHistories[-1]["totalMoney"] += operation.payment.units + operation.payment.nano * 10**(-9)
+          if operation.type == "Покупка ЦБ":
+            lastBuys[operation.figi] = len(actions)
+            newRecord = {"figi" : operation.figi, "ticker" : self.data.instMetainfo[operation.figi].ticker, "day" : operation.date.date()}
+            newRecord["dtBought"] = operation.date
+            newRecord["lotsBought"] = 0
+            newRecord["moneySpent"] = 0
+            for trade in operation.trades:
+              newRecord["lotsBought"] += trade.quantity
+              newRecord["moneySpent"] += trade.quantity * (trade.price.units + trade.price.nano * 10**(-9))
+            newRecord["outcome"] = 0
+            actions.append(newRecord)
+          if operation.type == "Продажа ЦБ":
+            if operation.figi in lastBuys:
+              ind = lastBuys[operation.figi]
+            else:
+              newRecord = {"figi" : operation.figi, "ticker" : self.data.instMetainfo[operation.figi].ticker, "day" : operation.date.date()}
+              newRecord["dtBought"] = ''
+              newRecord["lotsBought"] = 0
+              newRecord["moneySpent"] = 0
+              actions.append(newRecord)
+              ind = len(actions) - 1
+            actions[ind]["dtSold"] = operation.date
+            actions[ind]["lotsSold"] = 0
+            actions[ind]["moneyRecieved"] = 0
+            for trade in operation.trades:
+              actions[ind]["lotsSold"] += trade.quantity
+              actions[ind]["moneyRecieved"] += trade.quantity * (trade.price.units + trade.price.nano * 10**(-9))
+            if actions[ind]["moneySpent"] > 0:
+              actions[ind]["outcome"] = (actions[ind]["moneyRecieved"] / actions[ind]["moneySpent"]) - 1
+            else:
+              actions[ind]["outcome"] = 0
+    return operationHistories
+
 
 	############################################################################################################
 

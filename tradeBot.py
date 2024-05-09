@@ -16,14 +16,14 @@ class TradeBot(): #class to trade stocks using predicts from trained models
     if not os.path.exists(botDir):
       os.mkdir(botDir)
     self.botDir = botDir
-    #load models and params
-    self.loadModels()
-    #load token and account ids
+    #load token, account ids, models, objects
     self.token = APIUserInfo.getToken()
     self.app_name = APIUserInfo.getAppname()
     if self.token == "": return;
     self.accountIDs = APIUserInfo.getAccountIDs()
     if self.accountIDs == []: return
+    self.logs = [""] * (len(self.accountIDs) + 1)
+    self.loadModels()
     self.data = dataStorage.DataStorage()
     self.feats = featuresCreation.FeaturesCreation(self.data, self.params)
     self.feats.getInstInfo(os.path.join(self.botDir, "feats.pickle"), rewrite=False)
@@ -46,16 +46,41 @@ class TradeBot(): #class to trade stocks using predicts from trained models
 
   ############################################################################################################
 
+  def printLogs(self, text, accounts=-1, bPrint=True):
+    if bPrint:
+      print(text)
+    self.logs[-1] += text + "\n" #every message to global log file
+    if accounts != -1: #specific logs for this account
+      self.logs[accounts] += text + "\n"
+    else: #global message for every specific file
+      for logNum in range(len(self.accountIDs) - 1):
+        self.logs[logNum] += text + "\n"
+
+  ############################################################################################################
+
+  def flushLogs(self):
+    for logNum in range(len(self.logs)):
+      if logNum == len(self.logs) - 1:
+        filename = "all_logs.txt"
+      else:
+        filename = "account" + str(logNum) + "_logs.txt"
+      with open(os.path.join(self.botDir, filename), "a") as f:
+        f.write(self.logs[logNum])
+      self.logs[logNum] = ""
+
+  ############################################################################################################
+
   def mainLoop(self):
     #Run events
     while True:
       with tinkoff.invest.Client(self.token, target=tinkoff.invest.constants.INVEST_GRPC_API_SANDBOX, app_name=self.app_name) as self.grpcClient:
         wait = self.timeEvent()
       if wait <= 0 or self.bNeedToStop or os.path.exists("./stopBot.flag"):
-        print("MAIN LOOP STOPPED")
+        self.printLogs("MAIN LOOP STOPPED")
         break
-      if wait < 100: print("Waiting for", wait, "seconds")
-      else: print("Waiting for", wait // 60, "minutes")
+      if wait < 100: self.printLogs("Waiting for " + str(wait) + " seconds")
+      else: self.printLogs("Waiting for " + str(wait // 60) + " minutes")
+      self.flushLogs()
       time.sleep(wait)
 
 	############################################################################################################
@@ -65,21 +90,25 @@ class TradeBot(): #class to trade stocks using predicts from trained models
       self.positions = []
       self.orders = []
       self.stopOrders = []
+      self.portfolios = []
       for accountID in self.accountIDs:
         response = self.grpcClient.operations.get_positions(account_id = accountID)
         self.positions.append(response)
         response = self.grpcClient.orders.get_orders(account_id = accountID)
         self.orders.append(response.orders)
+        response = self.grpcClient.operations.get_portfolio(account_id = accountID)
+        self.portfolios.append(response)
       return 0
     except Exception as e:
-      print("!!! updatePositionsAndOrders error:", str(e))
+      self.printLogs("!!! updatePositionsAndOrders error: " + str(e))
       return -1
 
 	############################################################################################################
 
   def updateTradingMetainfo(self, force=False):
-    if (self.metainfoUpdated is None) or (self.metainfoUpdated.date() < tinkoff.invest.utils.datetime.now().date()):
+    if (self.metainfoUpdated is None) or (self.metainfoUpdated.date() < datetime.datetime.now().date()):
       try:
+        self.printLogs("Today is " + str(datetime.datetime.now().date()))
         self.exchangeEndTime = {}
         response = self.grpcClient.instruments.trading_schedules()
         for schedule in response.exchanges:
@@ -87,10 +116,10 @@ class TradeBot(): #class to trade stocks using predicts from trained models
             self.MOEX_start = schedule.days[0].start_time
           self.exchangeEndTime[schedule.exchange] = schedule.days[0].end_time
         self.instMetainfo = self.data.getInstrumentsMetainfo(force=True)
-        self.metainfoUpdated = tinkoff.invest.utils.datetime.utcnow().replace(tzinfo=pytz.timezone('UTC'))
+        self.metainfoUpdated = datetime.datetime.utcnow().replace(tzinfo=pytz.timezone('UTC'))
         return 0
       except Exception as e:
-        print("!!! updateTradingMetainfo error:", str(e))
+        self.printLogs("!!! updateTradingMetainfo error: " + str(e))
         return -1
     else:
       return 0
@@ -100,7 +129,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
   def loadModels(self):
     #Load models for predicts
     try:
-      print("Loading trained models..")
+      self.printLogs("Loading trained models..")
       self.models = []
       modelFilename = os.path.join(self.botDir, "models.pickle")
       with open(modelFilename, "rb") as f:
@@ -108,10 +137,10 @@ class TradeBot(): #class to trade stocks using predicts from trained models
       for modelNum in [1, 5]:
         self.models.append((trainedInfo["models"][modelNum][0], trainedInfo["models"][modelNum][1]))
       self.params = trainedInfo["params"]
-      print("Done loading trained models")
+      self.printLogs("Done loading trained models")
       return 0
     except Exception as e:
-      print("!!! loadModels error:", str(e), "!!!")
+      self.printLogs("!!! loadModels error: " + str(e) + " !!!")
       return -1
 
 	############################################################################################################
@@ -130,17 +159,17 @@ class TradeBot(): #class to trade stocks using predicts from trained models
     if (len(self.predicts) > 0) and (self.predicts[-1][0] > self.MOEX_start):
       return
     #calculate predicts
-    print("Calculating predicts...")
+    self.printLogs("Calculating predicts...")
     dateToXPredFrames, lastDate = self.feats.createXPredDataset(lastDays=1)
     predictsForToday = []
     for accountNum in range(len(self.accountIDs)):
       models = self.models[accountNum][0]
       predictsForToday.append(self.predicting.runPredict(dateToXPredFrames, [lastDate], self.models[accountNum][0], self.models[accountNum][1]))
-    self.predicts.append((tinkoff.invest.utils.datetime.utcnow().replace(tzinfo=pytz.timezone('UTC')), predictsForToday))
+    self.predicts.append((datetime.datetime.utcnow().replace(tzinfo=pytz.timezone('UTC')), predictsForToday))
     PREDICTS_FILENAME = os.path.join(self.botDir, "predicts.pickle")
     with open(PREDICTS_FILENAME, "wb") as f:
       pickle.dump(self.predicts, f)
-    print("Done calculating predicts")
+    self.printLogs("Done calculating predicts")
 
 	############################################################################################################
 
@@ -178,31 +207,33 @@ class TradeBot(): #class to trade stocks using predicts from trained models
 	############################################################################################################
 
   def timeEvent(self):
-    timeNow = tinkoff.invest.utils.datetime.utcnow().replace(tzinfo=pytz.timezone('UTC'))
-    print("=======")
-    print(timeNow.time(), "utc time")
+    timeNow = datetime.datetime.utcnow().replace(tzinfo=pytz.timezone('UTC'))
+    self.printLogs("=======")
+    self.printLogs(str(timeNow.time()) + " utc time")
     if (self.updateTradingMetainfo() != 0): #error in getting schedules and stocks metainfo for today
       return 10;
     if self.MOEX_start.timestamp() == 0 or self.MOEX_start.weekday() == 5:
-      print("No trading today")
+      self.printLogs(">>> No trading today")
       return 60 * 60 * 5
     if self.updatePositionsAndOrders() != 0: #error in information update
       return 10;
     self.groupInfoForTodayActions()
+    for accountNum in range(len(self.accountIDs)):
+      self.printLogs(self.getCurrentStatus(accountNum), accounts = accountNum)
     ########## PREPARATION STAGE <10:00
     if timeNow < self.MOEX_start:
-      print("PREPARATION STAGE")
+      self.printLogs(">>> PREPARATION STAGE")
       pass
-      return max(int((self.MOEX_start - timeNow).total_seconds()) // 2 ,1)
+      return max(int(2 * (self.MOEX_start - timeNow).total_seconds()) // 3 ,1)
     ########## BUY STAGE 10:00 - 11:00
     if timeNow >= self.MOEX_start and timeNow < self.MOEX_start + datetime.timedelta(minutes=60):
-      print("BUY STAGE")
+      self.printLogs(">>> BUY STAGE")
       #if no canldes for today download it
       if self.data.needNewCandles():
-        print("Downloading candles...")
+        self.printLogs("Downloading candles...")
         if (self.data.downloadCandles(verb=0)) != 0: #error
           return 15
-        print("Done downloading candles")
+        self.printLogs("Done downloading candles")
         #process new candles into features
         self.feats.getInstInfo(os.path.join(self.botDir, "feats.pickle"))
       #if no predicts - do it and put into file
@@ -219,7 +250,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
             sellLots = self.instActions[accountNum][inst]["position"] // self.data.instMetainfo[inst].lot
             if sellLots > 0:
               orderID = str(uuid.uuid4())
-              print("Making sell order", orderID)
+              self.printLogs(str(accountNum) + ": Making market price sell order for " + self.data.instMetainfo[inst].ticker, accounts=accountNum)
               response = self.grpcClient.orders.post_order(
                       quantity = sellLots,
                       direction = tinkoff.invest.OrderDirection.ORDER_DIRECTION_SELL,
@@ -228,7 +259,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
                       order_id = orderID,
                       instrument_id = inst,
                   )
-              print(response)
+              self.printLogs(str(response), accounts=accountNum)
               bSoldExtraPositions = True
         if bSoldExtraPositions: #wait for sell and reload positions
           return 1
@@ -244,7 +275,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
             buyLots = int((bank * self.instActions[accountNum][inst]["predict"]["bankPart"] / self.instActions[accountNum][inst]["predict"]["buyPrice"]) / self.data.instMetainfo[inst].lot)
             if buyLots > 0:
               orderID = str(uuid.uuid4())
-              print("Making buy order", orderID, buyLots, tinkoff.invest.utils.decimal_to_quotation(decimal.Decimal(self.instActions[accountNum][inst]["predict"]["buyPrice"])), inst)
+              self.printLogs(str(accountNum) + ": Making buy order for " + self.data.instMetainfo[inst].ticker + " at " + str(self.instActions[accountNum][inst]["predict"]["buyPrice"]) + " for " + str(self.instActions[accountNum][inst]["predict"]["buyPrice"] * buyLots), accounts=accountNum)
               response = self.grpcClient.orders.post_order(
                         quantity = buyLots,
                         price = tinkoff.invest.utils.decimal_to_quotation(decimal.Decimal(self.instActions[accountNum][inst]["predict"]["buyPrice"])),
@@ -254,14 +285,14 @@ class TradeBot(): #class to trade stocks using predicts from trained models
                         order_id = orderID,
                         instrument_id = inst,
                   )
-              print(response)
+              self.printLogs(str(response), accounts=accountNum)
           #buy order fullfilled
           if (self.instActions[accountNum][inst]["sellOrder"] is None) and (self.instActions[accountNum][inst]["buyOrder"] is None) and (self.instActions[accountNum][inst]["position"] > 0):
             self.instActions[accountNum][inst]["bought"] = True
             sellLots = self.instActions[accountNum][inst]["position"] // self.data.instMetainfo[inst].lot
             if sellLots > 0:
               orderID = str(uuid.uuid4())
-              print("Making sell order", orderID)
+              self.printLogs(str(accountNum) + ": Making sell order for " + self.data.instMetainfo[inst].ticker, accounts=accountNum)
               response = self.grpcClient.orders.post_order(
                         quantity = sellLots,
                         price = tinkoff.invest.utils.decimal_to_quotation(decimal.Decimal(self.instActions[accountNum][inst]["predict"]["sellPrice"])),
@@ -271,23 +302,23 @@ class TradeBot(): #class to trade stocks using predicts from trained models
                         order_id = orderID,
                         instrument_id = inst,
                   )
-              print(response)
+              self.printLogs(str(response), accounts=accountNum)
 
       return 60 * 5
 
     ########## SELL STAGE 11:00 - 18:40/23:50
     if timeNow >= self.MOEX_start + datetime.timedelta(minutes=60):
-      print("SELL STAGE")
+      self.printLogs(">>> SELL STAGE")
       for accountNum in range(len(self.accountIDs)):
         bCancelledStaledOrders = False
         for order in self.orders[accountNum]:
           if order.direction == tinkoff.invest.OrderDirection.ORDER_DIRECTION_BUY:
-            print("Cancelling staled buy order " + order.order_id + " for", order.figi, "for", accountNum, self.accountIDs[accountNum])
+            self.printLogs(str(accountNum) + ": Cancelling staled buy order for " + self.data.instMetainfo[order.figi].ticker, accounts=accountNum)
             response = self.grpcClient.orders.cancel_order(
                   account_id = self.accountIDs[accountNum],
                   order_id = order.order_id,
               )
-            print(response)
+            self.printLogs(str(response), accounts=accountNum)
             bCancelledStaledOrders = True
         if bCancelledStaledOrders: #wait, update info and run again
           return 1
@@ -295,14 +326,14 @@ class TradeBot(): #class to trade stocks using predicts from trained models
         #exchange closing time
         bCancelledStaledOrders = False
         for inst in self.instActions[accountNum]:
-          if timeNow > (self.instActions[accountNum][inst]["endTime"] - tinkoff.invest.utils.timedelta(minutes=15)):
+          if timeNow > (self.instActions[accountNum][inst]["endTime"] - datetime.timedelta(minutes=15)):
             if (self.instActions[accountNum][inst]["position"] > 0) and (self.instActions[accountNum][inst]["sellOrder"] is not None):
-              print("Cancelling staled sell order ")
+              self.printLogs(str(accountNum) + ": Cancelling staled sell order for " + self.data.instMetainfo[inst].ticker, accounts=accountNum)
               response = self.grpcClient.orders.cancel_order(
                     account_id = self.accountIDs[accountNum],
                     order_id = self.instActions[accountNum][inst]["sellOrder"].order_id,
                 )
-              print(response)
+              self.printLogs(str(response), accounts=accountNum)
               bCancelledStaledOrders = True
 
         if bCancelledStaledOrders: #wait, update info and run again
@@ -310,13 +341,12 @@ class TradeBot(): #class to trade stocks using predicts from trained models
 
         bSoldStaledPositions = False
         for inst in self.instActions[accountNum]:
-          if timeNow > (self.instActions[accountNum][inst]["endTime"] - tinkoff.invest.utils.timedelta(minutes=15)):
+          if timeNow > (self.instActions[accountNum][inst]["endTime"] - datetime.timedelta(minutes=15)):
             if self.instActions[accountNum][inst]["position"] > 0:
-              print("Market price sell on exchange closing for", inst)
               sellLots = self.instActions[accountNum][inst]["position"] // self.data.instMetainfo[inst].lot
               if sellLots > 0:
                 orderID = str(uuid.uuid4())
-                print("Making market price sell order", orderID)
+                self.printLogs(str(accountNum) + ": Market price sell on exchange closing for " + self.data.instMetainfo[inst].ticker, accounts=accountNum)
                 response = self.grpcClient.orders.post_order(
                       quantity = sellLots,
                       direction = tinkoff.invest.OrderDirection.ORDER_DIRECTION_SELL,
@@ -325,7 +355,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
                       order_id = orderID,
                       instrument_id = inst,
                   )
-              print(response)
+              self.printLogs(str(response), accounts=accountNum)
               bSoldStaledPositions = True
 
         if bSoldStaledPositions: #wait, update info and run again
@@ -337,10 +367,39 @@ class TradeBot(): #class to trade stocks using predicts from trained models
           if self.instActions[accountNum][inst]["position"] > 0:
             bAnyPositions = True
       if not bAnyPositions:
-        print("No positions to sell anymore")
+        self.printLogs("No positions to sell anymore")
         return 60 * 60 * 2
 
     return 60 * 10
+
+  ############################################################################################################
+
+  def getCurrentStatus(self, accountNum):
+    stRes = ""
+    total = 0
+    for position in self.portfolios[accountNum].positions:
+      if hasattr(position, "quantity"):
+        quantity = position.quantity.units + position.quantity.nano * 10**(-9)
+      if position.instrument_type == "currency":
+        stRes += "Rub: " + str(round(quantity, 1)) + "\n"
+        total += quantity
+      if position.instrument_type == 'share':
+        buyPrice = position.average_position_price.units + position.average_position_price.nano * 10**(-9)
+        moneySpent = buyPrice * (quantity)
+        currentPrice = position.current_price.units + position.current_price.nano * 10**(-9)
+        moneyNow = currentPrice * (quantity)
+        targetTP = 0
+        if (position.figi in self.instActions[accountNum]) and ("predict" in self.instActions[accountNum][position.figi]):
+          predict = self.instActions[accountNum][position.figi]["predict"]
+          targetTP = predict["sellPrice"] / predict["buyPrice"]
+        stRes += self.data.instMetainfo[position.figi].ticker + " {:.2f}% : ".format(100.*(moneyNow/moneySpent - 1)) + str(round(moneySpent, 1)) + " -> " + str(round(moneyNow, 1)) + " (Goal: {:+.2f}%)\n".format(100.*(targetTP - 1))
+        total += moneyNow
+    for order in self.orders[accountNum]:
+      if order.direction == tinkoff.invest.OrderDirection.ORDER_DIRECTION_BUY:
+        money = order.initialOrderPrice.units + order.initialOrderPrice.nano * 10**(-9)
+        stRes += "...-> " + self.data.instMetainfo[order.figi].ticker + " for " + str(round(money, 1)) + "\n"
+    stRes = "Account " + str(accountNum) + ":\n=" + str(round(total, 1)) + " total\n-----\n" + stRes
+    return stRes
 
   ############################################################################################################
 
@@ -387,7 +446,6 @@ class TradeBot(): #class to trade stocks using predicts from trained models
             else:
               actions[ind]["outcome"] = 0
     return operationHistories
-
 
 	############################################################################################################
 

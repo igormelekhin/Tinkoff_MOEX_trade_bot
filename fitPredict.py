@@ -235,7 +235,7 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 			print("Loss deals amount: \t", stats["lossDealsAmount"])
 			for inst in instStats:
 				instStats[inst]["meanResult"] = instStats[inst]["totalResult"] ** (1/instStats[inst]["boughtTimes"])
-			print("Instument stats", instStats)
+			#print("Instument stats", instStats)
 		return bank, history, refs, buysOutcomes, dayOutcomes, expectedOutcomes, optimalTPs, newLogs2File
         
 	############################################################################################################
@@ -264,8 +264,8 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
       			
 			trainLen = len(train)
 			testLen = len(test)
-      #datasets preparation for the current train/test fold for highs and returns.
-      #train
+			#datasets preparation for the current train/test fold for highs and returns.
+			#train
 			X_train, _ = self.featStorage.collectDataWithDatesList(self.dateToXFrames, train, "x", needFullInfo=False)
 			Y_train_ret, _ = self.featStorage.collectDataWithDatesList(self.dateToYRetFrames, train, "y", needFullInfo=False)
 			Y_train_high, _ = self.featStorage.collectDataWithDatesList(self.dateToYHighFrames, train, "y", needFullInfo=False)
@@ -306,13 +306,13 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 			#training for returns
 			Y_preds_ret, modelClass_ret = catBoostTrain(X_train, Y_train_ret, X_test, Y_test_ret, X_test, trainingParams,libSpecificParams)
 
-      #training for highs
+			#training for highs
 			Y_preds_high, modelClass_high = catBoostTrain(X_train, Y_train_high, X_test, Y_test_high, X_test, trainingParams,libSpecificParams)
 
-      #probabilities of pairs (not used)
+			#probabilities of pairs (not used)
 			Y_pair_probs = np.ones((len(X_test), len(currentParams["highLevels"]) + 1, len(currentParams["retLevels"]) + 1 + 1))
 
-      #calculation of optimal TP and expected results according to predicted probability densities of highs and returns
+			#calculation of optimal TP and expected results according to predicted probability densities of highs and returns
 			predRets, predTPs = self.calcOptimalTPandProfit(currentParams, Y_preds_ret, Y_preds_high, Y_info_test_ret, Y_pair_probs) #with pairs
 			expectedReturns.extend(predRets)
 			optimalTPs.extend(predTPs)
@@ -325,7 +325,7 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 			bestIters[-1].append(modelClass_ret.get_best_iteration())
 			bestIters[-1].append(modelClass_high.get_best_iteration())
 			
-      #backtest day-by-day simulation accoring to optimal TPs and expected returns
+			#backtest day-by-day simulation accoring to optimal TPs and expected returns
 			backtestOutcome, backtestHistory, backtestRefs, newBuysOutcomes, newDayOutcomes, newExpectedOutcomes, newOptimalTPs, newLogs2File = self.runBacktest(currentParams, test, self.dateToYRetFrames, predRets, predTPs, refs, logFile=logFile, verb=verb)
 			logs2File += newLogs2File
 
@@ -334,8 +334,8 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 			expectedOutcomes.extend(newExpectedOutcomes)
 			optimalTPs.extend(newOptimalTPs)
 
-			print("backtest ret_metrics: \t {:.4f} \t Outcome: {:.3f}%".format(metricsRet, backtestOutcome*100))
-			print("backtest high_metrics: \t {:.4f} \t Outcome: {:.3f}% ".format(metricsHigh, backtestOutcome*100))
+			print("backtest ret_metrics: \t {:.4f} \t Outcome: {:.3f}%".format(metricsRet[-1], backtestOutcome*100))
+			print("backtest high_metrics: \t {:.4f} \t Outcome: {:.3f}% ".format(metricsHigh[-1], backtestOutcome*100))
 			refsOutcomes.append([])
 			stRefs = ""
 			for refOutcome in backtestRefs:
@@ -352,9 +352,9 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 		metricsHigh =  np.array(metricsHigh)
 
 		print("ret_metrics {:.4f}: {:.3f}% - {:.3f}".format(metricsRet.mean(), metricsRet.min(), metricsRet.max()))
-		#print("ret_metrics {:.4f}: {:.3f}% - {:.3f}".format(losses.prod()**(1/len(losses)), losses.min(), losses.max()))
+		#print("ret_metrics {:.4f}: {:.3f}% - {:.3f}".format(metricsRet.prod()**(1/len(metricsRet)), metricsRet.min(), metricsRet.max()))
 		print("high_metrics {:.4f}: {:.3f}% - {:.3f}".format(metricsHigh.mean(), metricsHigh.min(), metricsHigh.max()))
-		#print("high_metrics {:.4f}: {:.3f}% - {:.3f}".format(losses2.prod()**(1/len(losses2)), losses2.min(), losses2.max()))
+		#print("high_metrics {:.4f}: {:.3f}% - {:.3f}".format(metricsHigh.prod()**(1/len(metricsHigh)), metricsHigh.min(), metricsHigh.max()))
 		plt.figure()
 		plt.hist(metricsRet, color='g')
 		plt.title("ret_metrics")
@@ -481,7 +481,7 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 				buyPrice = instInfo["open"][frameInd] * 1.005
 				sellPrice = instInfo["open"][frameInd] * (1+buy[1]["TP"])
 				stopLoss = buyPrice * (1 - currentParams["stopLoss"])
-				description = "Buy " + ticker + "for {:.2f}, sell for {:.2f}({:+.2f}%)".format(buyPrice, sellPrice, 100*buy[1]["TP"]) + " Bank part {:.2f}".format(buy[1]["bankPart"]) + " Expected result {:+.2f}% Stop Loss {:.2f}({:+.2f}%)".format(100 * buy[0], stopLoss, -100*currentParams["stopLoss"])
+				description = "Buy " + ticker + " for {:.2f}, sell for {:.2f}({:+.2f}%)".format(buyPrice, sellPrice, 100*buy[1]["TP"]) + " Bank part {:.2f}".format(buy[1]["bankPart"]) + " Expected result {:+.2f}% Stop Loss {:.2f}({:+.2f}%)".format(100 * buy[0], stopLoss, -100*currentParams["stopLoss"])
 				instructionsForToday.append({"ticker" : ticker, "figi" : inst, "buyPrice" : buyPrice, "sellPrice" : sellPrice, "stopLoss" : stopLoss, "bankPart" : buy[1]["bankPart"], "day" : dates[dateInd], "description" : description})
 
 				if dateInd < len(dates) - 1: #if date is not last - it have results

@@ -1,0 +1,101 @@
+Account 1:
+=1874340.2 total
+-----
+Rub: 1265035.4
+QIWI -5.25% : 643052.8 -> 609304.8 (Goal: +3.26%)
+
+Account 1:
+=1874953.8 total
+-----
+Rub: 1265035.4
+QIWI -5.15% : 643052.8 -> 609918.4 (Goal: +3.26%)
+
+Account 1:
+=1875567.4 total
+-----
+Rub: 1265035.4
+QIWI -5.06% : 643052.8 -> 610532.0 (Goal: +3.26%)
+
+Account 1:
+=1874953.8 total
+-----
+Rub: 1265035.4
+QIWI -5.15% : 643052.8 -> 609918.4 (Goal: +3.26%)
+
+Account 1:
+=1874340.2 total
+-----
+Rub: 1265035.4
+QIWI -5.25% : 643052.8 -> 609304.8 (Goal: +3.26%)
+
+Account 1:
+=1875567.4 total
+-----
+Rub: 1265035.4
+QIWI -5.06% : 643052.8 -> 610532.0 (Goal: +3.26%)
+
+Account 1:
+=1874953.8 total
+-----
+Rub: 1265035.4
+QIWI -5.15% : 643052.8 -> 609918.4 (Goal: +3.26%)
+
+Account 1:
+=1874953.8 total
+-----
+Rub: 1265035.4
+QIWI -5.15% : 643052.8 -> 609918.4 (Goal: +3.26%)
+
+Account 1:
+=1873726.6 total
+-----
+Rub: 1265035.4
+QIWI -5.34% : 643052.8 -> 608691.2 (Goal: +3.26%)
+
+Account 1:
+=1873113.0 total
+-----
+Rub: 1265035.4
+QIWI -5.44% : 643052.8 -> 608077.6 (Goal: +3.26%)
+
+Account 1:
+=1874340.2 total
+-----
+Rub: 1265035.4
+QIWI -5.25% : 643052.8 -> 609304.8 (Goal: +3.26%)
+
+Account 1:
+=1873726.6 total
+-----
+Rub: 1265035.4
+QIWI -5.34% : 643052.8 -> 608691.2 (Goal: +3.26%)
+
+Account 1:
+=1873726.6 total
+-----
+Rub: 1265035.4
+QIWI -5.34% : 643052.8 -> 608691.2 (Goal: +3.26%)
+
+Account 1:
+=1871885.8 total
+-----
+Rub: 1265035.4
+QIWI -5.63% : 643052.8 -> 606850.4 (Goal: +3.26%)
+
+1: Cancelling staled sell order for QIWI
+CancelOrderResponse(time=datetime.datetime(2024, 5, 8, 20, 36, 53, 971779, tzinfo=datetime.timezone.utc), response_metadata=ResponseMetadata(tracking_id='da343f650d6d941dc2330d9a88be2433', server_time=datetime.datetime(2024, 5, 8, 20, 36, 53, 974324, tzinfo=datetime.timezone.utc)))
+Waiting for
+Account 1:
+=1871885.8 total
+-----
+Rub: 1265035.4
+QIWI -5.63% : 643052.8 -> 606850.4 (Goal: +3.26%)
+
+1: Market price sell on exchange closing for QIWI
+PostOrderResponse(order_id='0a5b6c5a-a9f9-4595-9979-6485e5a2edd0', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=3068, lots_executed=3068, initial_order_price=MoneyValue(currency='rub', units=606850, nano=400000000), executed_order_price=MoneyValue(currency='rub', units=197, nano=800000000), total_order_amount=MoneyValue(currency='rub', units=606850, nano=400000000), initial_commission=MoneyValue(currency='rub', units=303, nano=425200000), executed_commission=MoneyValue(currency='rub', units=303, nano=425200000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG005D1WCQ1', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=197, nano=800000000), order_type=<OrderType.ORDER_TYPE_MARKET: 2>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='120a928b-b2d6-45d7-a445-f6e49614ae6d', order_request_id='f9413101-2444-4acd-9bb5-60d76eb52704', response_metadata=ResponseMetadata(tracking_id='5e39d7253c839cd8095ec9dd011820f8', server_time=datetime.datetime(2024, 5, 8, 20, 36, 56, 401226, tzinfo=datetime.timezone.utc)))
+Waiting for
+Account 1:
+=1871582.4 total
+-----
+Rub: 1871582.4
+

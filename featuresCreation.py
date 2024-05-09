@@ -1,5 +1,5 @@
 import tinkoff.invest
-import pickle, os, datetime, time
+import pickle, os, datetime, time, pytz
 import numpy as np
 
 import defaultParameters
@@ -277,7 +277,7 @@ class FeaturesCreation(): #class to process candles to make features for train, 
 		
 	############################################################################################################
 	
-	def createKFolds(self, dateToFrames, K=5, cutLastFrames=10, fromYear=2000, params={}):
+	def createKFolds(self, dateToFrames, K=5, cutLastFrames=10, fromYear=2000, skipLastDays=0, params={}):
 		minDate, maxDate = None, None
 		for date in dateToFrames:
 			if date.year < fromYear: continue
@@ -288,6 +288,7 @@ class FeaturesCreation(): #class to process candles to make features for train, 
 		print(dayLength, "days length")
 		days = []
 		day = minDate
+		maxDate = maxDate - datetime.timedelta(skipLastDays)
 		while day < maxDate:
 			days.append(day)
 			day = day + datetime.timedelta(days = 1)
@@ -327,16 +328,16 @@ class FeaturesCreation(): #class to process candles to make features for train, 
 
 	def createXPredDataset(self, params={}, lastDays=120):
 		dateToXFrames = {}
+		minDate = datetime.datetime.utcnow().replace(tzinfo=pytz.timezone('UTC')) - datetime.timedelta(days=lastDays+1)
 		lastDate = None
 		for inst in self.instInfo:
 			if self.passedCandles[inst] < lastDays + 30: continue
 			info = self.instInfo[inst]
 			for i in range(self.passedCandles[inst] - lastDays, self.passedCandles[inst]):
 				date = info["candleTime"][i]
+				if date < minDate: continue
 				if lastDate is None: lastDate = date
 				else: lastDate = max(lastDate, date)
-				#if date < dtLastDay: continue
-				#print(i, inst, date, self.passedCandles[inst])
 				xFrame = self.createXFrame(params, inst, i)
 				dateToXFrames.setdefault(date, [])
 				dateToXFrames[date].append({"x" : xFrame, "inst" : inst, "frameInd" : i})  

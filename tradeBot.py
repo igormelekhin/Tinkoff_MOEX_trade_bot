@@ -108,7 +108,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
   def updateTradingMetainfo(self, force=False):
     if (self.metainfoUpdated is None) or (self.metainfoUpdated.date() < datetime.datetime.now().date()):
       try:
-        self.printLogs("Today is " + str(datetime.datetime.now().date()))
+        self.printLogs("############\nToday is " + str(datetime.datetime.now().date()))
         self.exchangeEndTime = {}
         response = self.grpcClient.instruments.trading_schedules()
         for schedule in response.exchanges:
@@ -164,7 +164,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
     predictsForToday = []
     for accountNum in range(len(self.accountIDs)):
       models = self.models[accountNum][0]
-      predictsForToday.append(self.predicting.runPredict(dateToXPredFrames, [lastDate], self.models[accountNum][0], self.models[accountNum][1]))
+      predictsForToday.append(self.predicting.runPredict(dateToXPredFrames, [lastDate], self.models[accountNum][0], self.models[accountNum][1])[0])
     self.predicts.append((datetime.datetime.utcnow().replace(tzinfo=pytz.timezone('UTC')), predictsForToday))
     PREDICTS_FILENAME = os.path.join(self.botDir, "predicts.pickle")
     with open(PREDICTS_FILENAME, "wb") as f:

@@ -141,9 +141,8 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
     
 	############################################################################################################
 	
-	def runBacktest(self, params, dates, dateToYRetFrames, Y_profit_preds, Y_TP_preds, refsList, logFile="", verb=0):
+	def runBacktest(self, params, dates, dateToYRetFrames, Y_profit_preds, Y_TP_preds, refsList, instStats, logFile="", verb=0):
 		stats = {"takeProfitsAmount" : 0, "stopLossesAmount" : 0, "profitDealsAmount" : 0, "lossDealsAmount" : 0}
-		instStats = {}
 		bank = 1
 		expectedOutcomes, optimalTPs, predsByDays, buysOutcomes, dayOutcomes, history, refs = [], [], [], [], [], [], []
 		
@@ -233,9 +232,6 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 			print("Stop Loss amount: \t", stats["stopLossesAmount"])
 			print("Profit deals amount: \t", stats["profitDealsAmount"])
 			print("Loss deals amount: \t", stats["lossDealsAmount"])
-			for inst in instStats:
-				instStats[inst]["meanResult"] = instStats[inst]["totalResult"] ** (1/instStats[inst]["boughtTimes"])
-			#print("Instument stats", instStats)
 		return bank, history, refs, buysOutcomes, dayOutcomes, expectedOutcomes, optimalTPs, newLogs2File
         
 	############################################################################################################
@@ -255,6 +251,7 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 		expectedReturns, optimalTPs, expectedOutcomes, buysOutcomes, dayOutcomes = [], [], [], [], []
 		metricsRet, metricsHigh = [], []
 		backtestOutcomes, backtestHistories, refsOutcomes = [], [], []
+		instStats = {}
 
 		logs2File = ""
 		models, bestIters = [], []
@@ -326,7 +323,7 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 			bestIters[-1].append(modelClass_high.get_best_iteration())
 			
 			#backtest day-by-day simulation accoring to optimal TPs and expected returns
-			backtestOutcome, backtestHistory, backtestRefs, newBuysOutcomes, newDayOutcomes, newExpectedOutcomes, newOptimalTPs, newLogs2File = self.runBacktest(currentParams, test, self.dateToYRetFrames, predRets, predTPs, refs, logFile=logFile, verb=verb)
+			backtestOutcome, backtestHistory, backtestRefs, newBuysOutcomes, newDayOutcomes, newExpectedOutcomes, newOptimalTPs, newLogs2File = self.runBacktest(currentParams, test, self.dateToYRetFrames, predRets, predTPs, refs, instStats, logFile=logFile, verb=verb)
 			logs2File += newLogs2File
 
 			buysOutcomes.extend(newBuysOutcomes)
@@ -433,6 +430,11 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 			infoPack["highTest"] = Y_test_high
 			infoPack["highPreds"] = Y_preds_high
 			infoPack["Y_test_high"] = Y_test_high
+
+		for inst in instStats:
+			instStats[inst]["meanResult"] = instStats[inst]["totalResult"] ** (1/instStats[inst]["boughtTimes"])
+		infoPack["instStats"] = instStats
+		#print("Instument stats", instStats)
     
 		if logFile:
 			with open(logFile, "w") as f:
@@ -452,7 +454,7 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 
 	############################################################################################################
 
-	def runPredict(self, dateToXPredFrames, dates, model_ret, model_high, params={}, verb=1):
+	def runPredict(self, dateToXPredFrames, dates, model_ret, model_high, params={}, stats={}, verb=1):
 		if params == {}: params = self.currentParams
 		currentParams = params
 		if verb > 0:
@@ -463,6 +465,11 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 		Y_pair_probs = np.ones((len(X_pred), len(currentParams["highLevels"]) + 1, len(currentParams["retLevels"]) + 1 + 1))
 		predRets, predTPs = self.calcOptimalTPandProfit(currentParams, Y_preds_ret, Y_preds_high, X_pred_info, Y_pair_probs)
 		
+		if stats == {}:
+			stats["stopLossesAmount"] = 0
+			stats["takeProfitsAmount"] = 0
+			stats["profitDealsAmount"] = 0
+			stats["lossDealsAmount"] = 0
 		ind = 0
 		indBase = ind
 		instructions = []
@@ -491,12 +498,16 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 					
 					if (l / o) - 1 < -STOP_LOSS:
 						outcome = 1 - STOP_LOSS
+						stats["stopLossesAmount"] += 1
 						instructionsForToday[-1]["outcomeType"] = "SL"
 					elif (h / o) - 1 > TAKE_PROFIT:
 						outcome = 1 + TAKE_PROFIT
+						stats["takeProfitsAmount"] += 1
 						instructionsForToday[-1]["outcomeType"] = "TP"
 					else:
 						outcome = c / o
+						if c > o: stats["profitDealsAmount"] += 1
+						else: stats["lossDealsAmount"] += 1
 						instructionsForToday[-1]["outcomeType"] = "--"
 					instructionsForToday[-1]["outcome"] = outcome
 					bankTook = buy[1]["bankPart"] * history[-1]
@@ -516,12 +527,15 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 					stDayOutcome += "{:+.2f}%".format(100 * (instruction["outcome"] - 1)) + " " + instruction["outcomeType"] + " " +instruction["description"] + "\n"
 				print(stDayOutcome + "\n")
 		if (verb > 0) and (len(dates) > 1):
+			print("Take Profit amount: \t", stats["takeProfitsAmount"])
+			print("Stop Loss amount: \t", stats["stopLossesAmount"])
+			print("Profit deals amount: \t", stats["profitDealsAmount"])
+			print("Loss deals amount: \t", stats["lossDealsAmount"])
 			plt.plot(history)
 			print()
 			print("Resulting bank -", history[-1])
 
-
-		return instructions
+		return instructions, history
 
 	############################################################################################################
 

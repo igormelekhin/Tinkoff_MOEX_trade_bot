@@ -8,10 +8,10 @@ import os
 
 import featuresCreation
 import defaultParameters
-
+ 
 from catboost import CatBoostClassifier, CatBoostRegressor, Pool, cv
 
-def catBoostTrain(X, Y, X_val, Y_val, X_test, trainingParams, libSpecificParams):
+def catBoostTrain(X, Y, X_val, Y_val, X_test, trainingParams, libSpecificParams, callbacks=[]):
     params = trainingParams.copy()
     defaultParams = {"ITERS" : 300, "LOSS" : "Poisson", "SEED" : 1, "CLASSIFIER" : False}
     for p in defaultParams:
@@ -31,7 +31,7 @@ def catBoostTrain(X, Y, X_val, Y_val, X_test, trainingParams, libSpecificParams)
     for i in range(len(X[0])):
         if type(X[0][i]) == str:
             cat_feats.append(i)
-    cat.fit(X, Y, cat_features=cat_feats, plot=False, verbose=False, eval_set=(X_val,Y_val), sample_weight=sample_weight)
+    cat.fit(X, Y, cat_features=cat_feats, callbacks=callbacks, plot=False, verbose=False, eval_set=(X_val,Y_val), sample_weight=sample_weight)
     if params["CLASSIFIER"]:
       return cat.predict_proba(X_test), cat
     else: return cat.predict(X_test), cat
@@ -279,6 +279,7 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 				for binNum in Y_train_ret:
 					Y_train_levels_count[binNum] += 1
 				plt.bar(range(Y_train_levels_count.shape[0]), Y_train_levels_count)
+				plt.title("Return bins distribution")
 				print("===== Y_train return levels =====")
 				for i, val in enumerate([-currentParams["stopLoss"],*currentParams["retLevels"]]):
 					WARN = "!!!!!!!!" if Y_train_levels_count[i] == 0 else ""
@@ -348,9 +349,9 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 		metricsRet = np.array(metricsRet)
 		metricsHigh =  np.array(metricsHigh)
 
-		print("ret_metrics {:.4f}: {:.3f}% - {:.3f}".format(metricsRet.mean(), metricsRet.min(), metricsRet.max()))
+		print("ret_metrics {:.4f}: {:.3f} - {:.3f}".format(metricsRet.mean(), metricsRet.min(), metricsRet.max()))
 		#print("ret_metrics {:.4f}: {:.3f}% - {:.3f}".format(metricsRet.prod()**(1/len(metricsRet)), metricsRet.min(), metricsRet.max()))
-		print("high_metrics {:.4f}: {:.3f}% - {:.3f}".format(metricsHigh.mean(), metricsHigh.min(), metricsHigh.max()))
+		print("high_metrics {:.4f}: {:.3f} - {:.3f}".format(metricsHigh.mean(), metricsHigh.min(), metricsHigh.max()))
 		#print("high_metrics {:.4f}: {:.3f}% - {:.3f}".format(metricsHigh.prod()**(1/len(metricsHigh)), metricsHigh.min(), metricsHigh.max()))
 		plt.figure()
 		plt.hist(metricsRet, color='g')
@@ -383,29 +384,29 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 		plt.hist(np.array(expectedOutcomes)*100, bins=50)
 		plt.yscale("log")
 		plt.grid()
-		plt.title("Expected outcomes")
+		plt.title("Expected outcomes, +%")
 
 		plt.figure(figsize=(13,6))
 		plt.hist(np.array(optimalTPs)*100, bins=50)
 		plt.yscale("log")
 		plt.grid()
-		plt.title("Optimal TP")
+		plt.title("Optimal TP, +%")
 
 		plt.figure(figsize=(13,6))
 		plt.hist(np.array(buysOutcomes)*100, log=True, bins=50)
 		plt.grid()
-		plt.title("Buys outcomes")
+		plt.title("Buys outcomes, +%")
 
 		plt.figure(figsize=(13,6))
 		plt.hist(np.array(dayOutcomes)*100, color='r', bins=50)
 		plt.grid()
-		plt.title("Day outcomes")
+		plt.title("Day outcomes, +%")
 
 		plt.figure(figsize=(13,6))
 		plt.hist(np.array(dayOutcomes)*100, color='r', bins=50)
 		plt.grid()
 		plt.yscale("log")
-		plt.title("Day outcomes logy")
+		plt.title("Day outcomes logy, +%")
 				
 		plt.figure(figsize=(12,8))
 		for backtestHistory in backtestHistories:
@@ -434,7 +435,50 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
 		for inst in instStats:
 			instStats[inst]["meanResult"] = instStats[inst]["totalResult"] ** (1/instStats[inst]["boughtTimes"])
 		infoPack["instStats"] = instStats
-		#print("Instument stats", instStats)
+		sortedInstStats = []
+		for inst in instStats:
+			sortedInstStats.append((instStats[inst]["boughtTimes"], inst, instStats[inst]))
+		sortedInstStats = sorted(sortedInstStats, key=lambda x:x[0], reverse=True)
+		print()
+		print("Mostly used instruments:")
+		for i in range(min(5, len(sortedInstStats))):
+			print(sortedInstStats[i][1], sortedInstStats[i][2])
+		sortedInstStats = []
+		for inst in instStats:
+			sortedInstStats.append((instStats[inst]["meanResult"], inst, instStats[inst]))
+		sortedInstStats = sorted(sortedInstStats, key=lambda x:x[0], reverse=True)
+		print()
+		print("Best mean result:")
+		for i in range(min(5, len(sortedInstStats))):
+			print(sortedInstStats[i][1], sortedInstStats[i][2])
+    
+		sortedInstStats = []
+		for inst in instStats:
+			sortedInstStats.append((instStats[inst]["totalResult"], inst, instStats[inst]))
+		sortedInstStats = sorted(sortedInstStats, key=lambda x:x[0], reverse=False)
+		print()
+		print("Worst total loss:")
+		for i in range(min(5, len(sortedInstStats))):
+			print(sortedInstStats[i][1], sortedInstStats[i][2])
+
+		plt.figure(figsize=(10, 6))
+		featImportances = []
+		for i in range(len(models)):
+			featImportances.append(models[i][0].get_feature_importance())
+			plt.scatter(range(len(featImportances[i])), featImportances[i], alpha=0.4)
+		plt.grid()
+		plt.xticks(rotation='vertical');
+		plt.title("Return predict feature importance")
+
+		plt.figure(figsize=(10, 6))
+		featImportances = []
+		for i in range(len(models)):
+			featImportances.append(models[i][1].get_feature_importance())
+			plt.scatter(range(len(featImportances[i])), featImportances[i], alpha=0.4)
+		plt.grid()
+		plt.xticks(rotation='vertical');
+		plt.title("High predict feature importance")
+
     
 		if logFile:
 			with open(logFile, "w") as f:

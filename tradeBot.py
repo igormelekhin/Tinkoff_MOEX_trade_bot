@@ -275,7 +275,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
             buyLots = int((bank * self.instActions[accountNum][inst]["predict"]["bankPart"] / self.instActions[accountNum][inst]["predict"]["buyPrice"]) / self.data.instMetainfo[inst].lot)
             if buyLots > 0:
               orderID = str(uuid.uuid4())
-              self.printLogs(str(accountNum) + ": Making buy order for " + self.data.instMetainfo[inst].ticker + " at " + str(self.instActions[accountNum][inst]["predict"]["buyPrice"]) + " for " + str(self.instActions[accountNum][inst]["predict"]["buyPrice"] * buyLots), accounts=accountNum)
+              self.printLogs(str(accountNum) + ": Making buy order for " + self.data.instMetainfo[inst].ticker + " at " + str(self.instActions[accountNum][inst]["predict"]["buyPrice"]) + " for " + str(self.instActions[accountNum][inst]["predict"]["buyPrice"] * buyLots * self.data.instMetainfo[inst].lot), accounts=accountNum)
               response = self.grpcClient.orders.post_order(
                         quantity = buyLots,
                         price = tinkoff.invest.utils.decimal_to_quotation(decimal.Decimal(self.instActions[accountNum][inst]["predict"]["buyPrice"])),
@@ -396,7 +396,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
         total += moneyNow
     for order in self.orders[accountNum]:
       if order.direction == tinkoff.invest.OrderDirection.ORDER_DIRECTION_BUY:
-        money = order.initialOrderPrice.units + order.initialOrderPrice.nano * 10**(-9)
+        money = order.initial_order_price.units + order.initial_order_price.nano * 10**(-9)
         stRes += "...-> " + self.data.instMetainfo[order.figi].ticker + " for " + str(round(money, 1)) + "\n"
     stRes = "Account " + str(accountNum) + ":\n=" + str(round(total, 1)) + " total\n-----\n" + stRes
     return stRes

@@ -42,6 +42,6 @@ def getAccountIDs():
 
 
 if __name__ == "__main__":
-	print(getToken())
-	
-	
+  print(getToken())
+  
+  

@@ -83,7 +83,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
       self.flushLogs()
       time.sleep(wait)
 
-	############################################################################################################
+  ############################################################################################################
 
   def updatePositionsAndOrders(self):
     try:
@@ -103,7 +103,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
       self.printLogs("!!! updatePositionsAndOrders error: " + str(e))
       return -1
 
-	############################################################################################################
+  ############################################################################################################
 
   def updateTradingMetainfo(self, force=False):
     if (self.metainfoUpdated is None) or (self.metainfoUpdated.date() < datetime.datetime.now().date()):
@@ -124,7 +124,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
     else:
       return 0
 
-	############################################################################################################
+  ############################################################################################################
 
   def loadModels(self):
     #Load models for predicts
@@ -143,7 +143,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
       self.printLogs("!!! loadModels error: " + str(e) + " !!!")
       return -1
 
-	############################################################################################################
+  ############################################################################################################
   
   def loadPredicts(self):
     PREDICTS_FILENAME = os.path.join(self.botDir, "predicts.pickle")
@@ -171,7 +171,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
       pickle.dump(self.predicts, f)
     self.printLogs("Done calculating predicts")
 
-	############################################################################################################
+  ############################################################################################################
 
   def groupInfoForTodayActions(self):
     #Pack current positions and orders according to predicts
@@ -204,7 +204,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
         if order.direction == tinkoff.invest.OrderDirection.ORDER_DIRECTION_SELL:
           self.instActions[accountNum][order.figi]["sellOrder"] = order
 
-	############################################################################################################
+  ############################################################################################################
 
   def timeEvent(self):
     timeNow = datetime.datetime.utcnow().replace(tzinfo=pytz.timezone('UTC'))
@@ -447,7 +447,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
               actions[ind]["outcome"] = 0
     return operationHistories
 
-	############################################################################################################
+  ############################################################################################################
 
   def sellAllPositions(self):
     if self.updateTradingMetainfo() != 0: #error
@@ -470,7 +470,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
             print(response)
     return 0
 
-	############################################################################################################
+  ############################################################################################################
 
   def cancelAllOrders(self):
     if self.updateTradingMetainfo() != 0: #error
@@ -487,6 +487,6 @@ class TradeBot(): #class to trade stocks using predicts from trained models
     return 0
 
 if __name__ == "__main__":
-	bot = TradeBot()
-	
-	
+  bot = TradeBot()
+  
+  

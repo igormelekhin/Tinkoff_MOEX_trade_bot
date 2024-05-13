@@ -247,3 +247,2872 @@ Today is 2024-05-09
 08:04:05.584316 utc time
 >>> No trading today
 Waiting for 300 minutes
+Loading trained models..
+Done loading trained models
+############
+Today is 2024-05-10
+=======
+06:56:37.884552 utc time
+Account 0:
+=1913247.9 total
+-----
+Rub: 1913247.9
+
+Account 1:
+=1871582.4 total
+-----
+Rub: 1871582.4
+
+>>> PREPARATION STAGE
+Waiting for 2 minutes
+=======
+06:58:53.953740 utc time
+Account 0:
+=1913247.9 total
+-----
+Rub: 1913247.9
+
+Account 1:
+=1871582.4 total
+-----
+Rub: 1871582.4
+
+>>> PREPARATION STAGE
+Waiting for 44 seconds
+=======
+06:59:39.464264 utc time
+Account 0:
+=1913247.9 total
+-----
+Rub: 1913247.9
+
+Account 1:
+=1871582.4 total
+-----
+Rub: 1871582.4
+
+>>> PREPARATION STAGE
+Waiting for 13 seconds
+=======
+06:59:53.907937 utc time
+Account 0:
+=1913247.9 total
+-----
+Rub: 1913247.9
+
+Account 1:
+=1871582.4 total
+-----
+Rub: 1871582.4
+
+>>> PREPARATION STAGE
+Waiting for 4 seconds
+=======
+06:59:59.163045 utc time
+Account 0:
+=1913247.9 total
+-----
+Rub: 1913247.9
+
+Account 1:
+=1871582.4 total
+-----
+Rub: 1871582.4
+
+>>> PREPARATION STAGE
+Waiting for 1 seconds
+=======
+07:00:01.398471 utc time
+Account 0:
+=1913247.9 total
+-----
+Rub: 1913247.9
+
+Account 1:
+=1871582.4 total
+-----
+Rub: 1871582.4
+
+>>> BUY STAGE
+Downloading candles...
+Done downloading candles
+Calculating predicts...
+Done calculating predicts
+0: Making buy order for QIWI at 199.392 for 631275.072
+PostOrderResponse(order_id='6ab0752d-9e0b-4b36-9889-94d7701f1e4e', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=3166, lots_executed=3166, initial_order_price=MoneyValue(currency='rub', units=628767, nano=600000000), executed_order_price=MoneyValue(currency='rub', units=198, nano=600000000), total_order_amount=MoneyValue(currency='rub', units=628767, nano=600000000), initial_commission=MoneyValue(currency='rub', units=314, nano=383800000), executed_commission=MoneyValue(currency='rub', units=314, nano=383800000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG005D1WCQ1', direction=<OrderDirection.ORDER_DIRECTION_BUY: 1>, initial_security_price=MoneyValue(currency='rub', units=198, nano=600000000), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='120a928b-b2d6-45d7-a445-f6e49614ae6d', order_request_id='a8b65075-9010-421c-810b-3a2af472f80f', response_metadata=ResponseMetadata(tracking_id='591989fecd7bfb3d635c255dab54830f', server_time=datetime.datetime(2024, 5, 10, 7, 0, 34, 292820, tzinfo=datetime.timezone.utc)))
+0: Making buy order for ZILLP at 3218.0099999999998 for 630729.96
+PostOrderResponse(order_id='a6ba14b6-c2e0-438a-99ce-b80ce0a0f91e', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=196, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=630729, nano=959999804), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=630729, nano=959999804), initial_commission=MoneyValue(currency='rub', units=315, nano=364979999), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG000QFB4J6', direction=<OrderDirection.ORDER_DIRECTION_BUY: 1>, initial_security_price=MoneyValue(currency='rub', units=3218, nano=9999999), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='f4da07c8-dfc5-44f8-989d-c45d85027aad', order_request_id='013ce4ad-eeca-4079-8139-857ed51e53b3', response_metadata=ResponseMetadata(tracking_id='905501af4b828d560c319ed79c0ff013', server_time=datetime.datetime(2024, 5, 10, 7, 0, 34, 459940, tzinfo=datetime.timezone.utc)))
+0: Making buy order for MRKV at 0.0738675 for 63.082845
+PostOrderResponse(order_id='6458b888-ea2a-4f3e-8e1d-e07dc1ea27e2', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=854, lots_executed=854, initial_order_price=MoneyValue(currency='rub', units=622566, nano=0), executed_order_price=MoneyValue(currency='rub', units=0, nano=72900000), total_order_amount=MoneyValue(currency='rub', units=622566, nano=0), initial_commission=MoneyValue(currency='rub', units=311, nano=283000000), executed_commission=MoneyValue(currency='rub', units=311, nano=283000000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG000PKWCQ7', direction=<OrderDirection.ORDER_DIRECTION_BUY: 1>, initial_security_price=MoneyValue(currency='rub', units=0, nano=72900000), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='8ec4edb6-b779-4e3c-9146-b11210174d51', order_request_id='5239d1ba-bfed-4862-916d-521b8d083a96', response_metadata=ResponseMetadata(tracking_id='b222113c46095f8fcdbfe790d52ba5c0', server_time=datetime.datetime(2024, 5, 10, 7, 0, 34, 631276, tzinfo=datetime.timezone.utc)))
+1: Making buy order for QIWI at 199.392 for 617517.024
+PostOrderResponse(order_id='abc4af18-1440-4794-9426-7ecd9b420c4d', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=3097, lots_executed=3097, initial_order_price=MoneyValue(currency='rub', units=615064, nano=200000000), executed_order_price=MoneyValue(currency='rub', units=198, nano=600000000), total_order_amount=MoneyValue(currency='rub', units=615064, nano=200000000), initial_commission=MoneyValue(currency='rub', units=307, nano=532100000), executed_commission=MoneyValue(currency='rub', units=307, nano=532100000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG005D1WCQ1', direction=<OrderDirection.ORDER_DIRECTION_BUY: 1>, initial_security_price=MoneyValue(currency='rub', units=198, nano=600000000), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='120a928b-b2d6-45d7-a445-f6e49614ae6d', order_request_id='c77bc82e-af83-4ae4-8f71-bc24fe3dac26', response_metadata=ResponseMetadata(tracking_id='90a912bc47c98b4a753e90f79daaddc3', server_time=datetime.datetime(2024, 5, 10, 7, 0, 34, 810131, tzinfo=datetime.timezone.utc)))
+1: Making buy order for ZILLP at 3218.0099999999998 for 614639.9099999999
+PostOrderResponse(order_id='89a969c8-7fde-4925-9ae1-9f327c28f978', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=191, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=614639, nano=909999809), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=614639, nano=909999809), initial_commission=MoneyValue(currency='rub', units=307, nano=319954999), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG000QFB4J6', direction=<OrderDirection.ORDER_DIRECTION_BUY: 1>, initial_security_price=MoneyValue(currency='rub', units=3218, nano=9999999), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='f4da07c8-dfc5-44f8-989d-c45d85027aad', order_request_id='2c50c6ca-9259-421e-afb6-92fd77d43a62', response_metadata=ResponseMetadata(tracking_id='b8874d3a19ffd8661946f28cb3ad52bd', server_time=datetime.datetime(2024, 5, 10, 7, 0, 34, 959602, tzinfo=datetime.timezone.utc)))
+1: Making buy order for VRSB at 662.295 for 61593.435
+PostOrderResponse(order_id='2f61230e-e91d-43b4-b993-17584d366577', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=93, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=615934, nano=349999070), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=615934, nano=349999070), initial_commission=MoneyValue(currency='rub', units=307, nano=967174999), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG000BX7DH0', direction=<OrderDirection.ORDER_DIRECTION_BUY: 1>, initial_security_price=MoneyValue(currency='rub', units=662, nano=294999999), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='3c899002-e8f5-42fd-b617-4bc2f31e6767', order_request_id='7743c1a4-d9b8-4c88-a5ca-50d68dad7be8', response_metadata=ResponseMetadata(tracking_id='dba893863371fb89df13e4efb68f4cd4', server_time=datetime.datetime(2024, 5, 10, 7, 0, 35, 118893, tzinfo=datetime.timezone.utc)))
+Waiting for 5 minutes
+=======
+07:05:35.272361 utc time
+=======
+07:06:19.985799 utc time
+Account 0:
+=1902638.8 total
+-----
+Rub: 661288.6
+QIWI -0.70% : 628767.6 -> 624335.2 (Goal: +3.26%)
+MRKV -0.89% : 622566.0 -> 617015.0 (Goal: +1.93%)
+
+Account 1:
+=1867561.7 total
+-----
+Rub: 641173.3
+QIWI -2.37% : 625560.9 -> 610728.4 (Goal: +8.86%)
+VRSB 0.15% : 614730.0 -> 615660.0 (Goal: +3.08%)
+
+>>> BUY STAGE
+0: Making sell order for QIWI
+PostOrderResponse(order_id='301d0b9f-2a9f-4e68-bfa1-02cd3ec84d76', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=3166, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=651871, nano=700424138), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=651871, nano=700424138), initial_commission=MoneyValue(currency='rub', units=325, nano=935850212), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG005D1WCQ1', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=205, nano=897568043), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='120a928b-b2d6-45d7-a445-f6e49614ae6d', order_request_id='4c217d6e-7d8d-4121-b408-3310316c8f8d', response_metadata=ResponseMetadata(tracking_id='57a18b1d8edf921b802ee53eca0f4360', server_time=datetime.datetime(2024, 5, 10, 7, 6, 21, 626065, tzinfo=datetime.timezone.utc)))
+0: Making sell order for MRKV
+PostOrderResponse(order_id='5b8ba866-b837-430f-87e6-bb4e3c6cb8eb', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=854, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=642989, nano=324600000), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=642989, nano=324600000), initial_commission=MoneyValue(currency='rub', units=321, nano=494662300), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG000PKWCQ7', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=0, nano=75291490), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='8ec4edb6-b779-4e3c-9146-b11210174d51', order_request_id='2b1f4a3c-acb7-46f9-8ebf-d30c3b365123', response_metadata=ResponseMetadata(tracking_id='f45b520a8bf1dba6202ccce1106235c0', server_time=datetime.datetime(2024, 5, 10, 7, 6, 21, 790920, tzinfo=datetime.timezone.utc)))
+1: Making sell order for QIWI
+PostOrderResponse(order_id='1b02e1d8-c78a-4404-82ef-21bd9f9ff490', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=3097, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=672220, nano=862688160), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=672220, nano=862688160), initial_commission=MoneyValue(currency='rub', units=336, nano=110431344), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG005D1WCQ1', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=217, nano=55493280), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='120a928b-b2d6-45d7-a445-f6e49614ae6d', order_request_id='951473b2-6665-4bf0-bb8b-9e8b4975419e', response_metadata=ResponseMetadata(tracking_id='b276689b49c626888057224293c73508', server_time=datetime.datetime(2024, 5, 10, 7, 6, 21, 950298, tzinfo=datetime.timezone.utc)))
+1: Making sell order for VRSB
+PostOrderResponse(order_id='159ea5a2-d426-4e97-83da-dafd39336691', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=93, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=634927, nano=787609490), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=634927, nano=787609490), initial_commission=MoneyValue(currency='rub', units=317, nano=463893804), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG000BX7DH0', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=682, nano=718051193), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='3c899002-e8f5-42fd-b617-4bc2f31e6767', order_request_id='a0b295f5-39f6-4a39-81bd-06df62f16b44', response_metadata=ResponseMetadata(tracking_id='c40ebd5b3d971a8dd30aa1afe437269e', server_time=datetime.datetime(2024, 5, 10, 7, 6, 22, 116984, tzinfo=datetime.timezone.utc)))
+Waiting for 5 minutes
+=======
+07:06:50.851116 utc time
+Account 0:
+=1904980.0 total
+-----
+Rub: 661288.6
+QIWI -0.60% : 628767.6 -> 624968.4 (Goal: +3.26%)
+MRKV -0.62% : 622566.0 -> 618723.0 (Goal: +1.93%)
+...-> ZILLP for 630730.0
+
+Account 1:
+=1868181.1 total
+-----
+Rub: 641173.3
+QIWI -2.27% : 625560.9 -> 611347.8 (Goal: +8.86%)
+VRSB 0.15% : 614730.0 -> 615660.0 (Goal: +3.08%)
+...-> ZILLP for 614639.9
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:11:52.475816 utc time
+Account 0:
+=1910751.8 total
+-----
+Rub: 661288.6
+QIWI -0.70% : 628767.6 -> 624335.2 (Goal: +3.26%)
+MRKV 0.41% : 622566.0 -> 625128.0 (Goal: +1.93%)
+...-> ZILLP for 630730.0
+
+Account 1:
+=1869421.7 total
+-----
+Rub: 641173.3
+QIWI -2.37% : 625560.9 -> 610728.4 (Goal: +8.86%)
+VRSB 0.45% : 614730.0 -> 617520.0 (Goal: +3.08%)
+...-> ZILLP for 614639.9
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:16:53.927001 utc time
+Account 0:
+=1904582.2 total
+-----
+Rub: 661288.6
+QIWI -1.01% : 628767.6 -> 622435.6 (Goal: +3.26%)
+MRKV -0.27% : 622566.0 -> 620858.0 (Goal: +1.93%)
+...-> ZILLP for 630730.0
+
+Account 1:
+=1866633.5 total
+-----
+Rub: 641173.3
+QIWI -2.67% : 625560.9 -> 608870.2 (Goal: +8.86%)
+VRSB 0.30% : 614730.0 -> 616590.0 (Goal: +3.08%)
+...-> ZILLP for 614639.9
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:21:55.582558 utc time
+Account 0:
+=1905230.0 total
+-----
+Rub: 661288.6
+QIWI -1.11% : 628767.6 -> 621802.4 (Goal: +3.26%)
+MRKV -0.07% : 622566.0 -> 622139.0 (Goal: +1.93%)
+...-> ZILLP for 630730.0
+
+Account 1:
+=1863689.1 total
+-----
+Rub: 641173.3
+QIWI -2.77% : 625560.9 -> 608250.8 (Goal: +8.86%)
+VRSB -0.08% : 614730.0 -> 614265.0 (Goal: +3.08%)
+...-> ZILLP for 614639.9
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:26:57.086337 utc time
+Account 0:
+=1902226.4 total
+-----
+Rub: 661288.6
+QIWI -0.91% : 628767.6 -> 623068.8 (Goal: +3.26%)
+MRKV -0.75% : 622566.0 -> 617869.0 (Goal: +1.93%)
+...-> ZILLP for 630730.0
+
+Account 1:
+=1862602.9 total
+-----
+Rub: 641173.3
+QIWI -2.57% : 625560.9 -> 609489.6 (Goal: +8.86%)
+VRSB -0.45% : 614730.0 -> 611940.0 (Goal: +3.08%)
+...-> ZILLP for 614639.9
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:31:58.773005 utc time
+Account 0:
+=1900945.4 total
+-----
+Rub: 661288.6
+QIWI -0.91% : 628767.6 -> 623068.8 (Goal: +3.26%)
+MRKV -0.96% : 622566.0 -> 616588.0 (Goal: +1.93%)
+...-> ZILLP for 630730.0
+
+Account 1:
+=1861672.9 total
+-----
+Rub: 641173.3
+QIWI -2.57% : 625560.9 -> 609489.6 (Goal: +8.86%)
+VRSB -0.61% : 614730.0 -> 611010.0 (Goal: +3.08%)
+...-> ZILLP for 614639.9
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:37:00.534324 utc time
+Account 0:
+=1899899.8 total
+-----
+Rub: 661288.6
+QIWI -1.21% : 628767.6 -> 621169.2 (Goal: +3.26%)
+MRKV -0.82% : 622566.0 -> 617442.0 (Goal: +1.93%)
+...-> ZILLP for 630730.0
+
+Account 1:
+=1860744.7 total
+-----
+Rub: 641173.3
+QIWI -2.87% : 625560.9 -> 607631.4 (Goal: +8.86%)
+VRSB -0.45% : 614730.0 -> 611940.0 (Goal: +3.08%)
+...-> ZILLP for 614639.9
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:42:02.205909 utc time
+Account 0:
+=1903109.6 total
+-----
+Rub: 661288.6
+QIWI -1.31% : 628767.6 -> 620536.0 (Goal: +3.26%)
+MRKV -0.21% : 622566.0 -> 621285.0 (Goal: +1.93%)
+...-> ZILLP for 630730.0
+
+Account 1:
+=1861985.3 total
+-----
+Rub: 641173.3
+QIWI -2.97% : 625560.9 -> 607012.0 (Goal: +8.86%)
+VRSB -0.15% : 614730.0 -> 613800.0 (Goal: +3.08%)
+...-> ZILLP for 614639.9
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:47:03.800304 utc time
+Account 0:
+=1904803.0 total
+-----
+Rub: 661288.6
+QIWI -1.11% : 628767.6 -> 621802.4 (Goal: +3.26%)
+MRKV -0.14% : 622566.0 -> 621712.0 (Goal: +1.93%)
+...-> ZILLP for 630730.0
+
+Account 1:
+=1863224.1 total
+-----
+Rub: 641173.3
+QIWI -2.77% : 625560.9 -> 608250.8 (Goal: +8.86%)
+VRSB -0.15% : 614730.0 -> 613800.0 (Goal: +3.08%)
+...-> ZILLP for 614639.9
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:52:05.226643 utc time
+Account 0:
+=1908219.0 total
+-----
+Rub: 661288.6
+QIWI -1.11% : 628767.6 -> 621802.4 (Goal: +3.26%)
+MRKV 0.41% : 622566.0 -> 625128.0 (Goal: +1.93%)
+...-> ZILLP for 630730.0
+
+Account 1:
+=1863689.1 total
+-----
+Rub: 641173.3
+QIWI -2.77% : 625560.9 -> 608250.8 (Goal: +8.86%)
+VRSB -0.08% : 614730.0 -> 614265.0 (Goal: +3.08%)
+...-> ZILLP for 614639.9
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:57:06.631425 utc time
+Account 0:
+=1907806.6 total
+-----
+Rub: 661288.6
+QIWI -1.31% : 628767.6 -> 620536.0 (Goal: +3.26%)
+MRKV 0.55% : 622566.0 -> 625982.0 (Goal: +1.93%)
+...-> ZILLP for 630730.0
+
+Account 1:
+=1864775.3 total
+-----
+Rub: 641173.3
+QIWI -2.97% : 625560.9 -> 607012.0 (Goal: +8.86%)
+VRSB 0.30% : 614730.0 -> 616590.0 (Goal: +3.08%)
+...-> ZILLP for 614639.9
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+08:02:08.201160 utc time
+Account 0:
+=1906923.4 total
+-----
+Rub: 661288.6
+QIWI -0.91% : 628767.6 -> 623068.8 (Goal: +3.26%)
+MRKV 0.00% : 622566.0 -> 622566.0 (Goal: +1.93%)
+...-> ZILLP for 630730.0
+
+Account 1:
+=1868182.9 total
+-----
+Rub: 641173.3
+QIWI -2.57% : 625560.9 -> 609489.6 (Goal: +8.86%)
+VRSB 0.45% : 614730.0 -> 617520.0 (Goal: +3.08%)
+...-> ZILLP for 614639.9
+
+>>> SELL STAGE
+0: Cancelling staled buy order for ZILLP
+CancelOrderResponse(time=datetime.datetime(2024, 5, 10, 8, 2, 9, 725218, tzinfo=datetime.timezone.utc), response_metadata=ResponseMetadata(tracking_id='9be7611bf9bcfb80a365b2af1cfb88ef', server_time=datetime.datetime(2024, 5, 10, 8, 2, 9, 727194, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+08:02:10.818456 utc time
+Account 0:
+=1906923.4 total
+-----
+Rub: 661288.6
+QIWI -0.91% : 628767.6 -> 623068.8 (Goal: +3.26%)
+MRKV 0.00% : 622566.0 -> 622566.0 (Goal: +1.93%)
+
+Account 1:
+=1868182.9 total
+-----
+Rub: 641173.3
+QIWI -2.57% : 625560.9 -> 609489.6 (Goal: +8.86%)
+VRSB 0.45% : 614730.0 -> 617520.0 (Goal: +3.08%)
+...-> ZILLP for 614639.9
+
+>>> SELL STAGE
+1: Cancelling staled buy order for ZILLP
+CancelOrderResponse(time=datetime.datetime(2024, 5, 10, 8, 2, 12, 146037, tzinfo=datetime.timezone.utc), response_metadata=ResponseMetadata(tracking_id='f807788ceae8adee38cef44d098fe5ba', server_time=datetime.datetime(2024, 5, 10, 8, 2, 12, 150999, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+08:02:13.244808 utc time
+Account 0:
+=1906923.4 total
+-----
+Rub: 661288.6
+QIWI -0.91% : 628767.6 -> 623068.8 (Goal: +3.26%)
+MRKV 0.00% : 622566.0 -> 622566.0 (Goal: +1.93%)
+
+Account 1:
+=1868182.9 total
+-----
+Rub: 641173.3
+QIWI -2.57% : 625560.9 -> 609489.6 (Goal: +8.86%)
+VRSB 0.45% : 614730.0 -> 617520.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+Loading trained models..
+Done loading trained models
+############
+Today is 2024-05-10
+=======
+08:38:42.624215 utc time
+Account 0:
+=1904640.6 total
+-----
+Rub: 661288.6
+QIWI -1.81% : 628767.6 -> 617370.0 (Goal: +3.26%)
+MRKV 0.55% : 622566.0 -> 625982.0 (Goal: +1.93%)
+
+Account 1:
+=1861678.3 total
+-----
+Rub: 641173.3
+QIWI -3.46% : 625560.9 -> 603915.0 (Goal: +8.86%)
+VRSB 0.30% : 614730.0 -> 616590.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+09:31:38.720177 utc time
+Account 0:
+=1905244.6 total
+-----
+Rub: 661288.6
+QIWI -1.31% : 628767.6 -> 620536.0 (Goal: +3.26%)
+MRKV 0.14% : 622566.0 -> 623420.0 (Goal: +1.93%)
+
+Account 1:
+=1863845.3 total
+-----
+Rub: 641173.3
+QIWI -2.97% : 625560.9 -> 607012.0 (Goal: +8.86%)
+VRSB 0.15% : 614730.0 -> 615660.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+09:41:40.254801 utc time
+Account 0:
+=1908837.6 total
+-----
+Rub: 661288.6
+QIWI -0.81% : 628767.6 -> 623702.0 (Goal: +3.26%)
+MRKV 0.21% : 622566.0 -> 623847.0 (Goal: +1.93%)
+
+Account 1:
+=1865082.3 total
+-----
+Rub: 641173.3
+QIWI -2.47% : 625560.9 -> 610109.0 (Goal: +8.86%)
+VRSB -0.15% : 614730.0 -> 613800.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+09:51:42.036618 utc time
+Account 0:
+=1907144.2 total
+-----
+Rub: 661288.6
+QIWI -1.01% : 628767.6 -> 622435.6 (Goal: +3.26%)
+MRKV 0.14% : 622566.0 -> 623420.0 (Goal: +1.93%)
+
+Account 1:
+=1864773.5 total
+-----
+Rub: 641173.3
+QIWI -2.67% : 625560.9 -> 608870.2 (Goal: +8.86%)
+VRSB 0.00% : 614730.0 -> 614730.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+10:01:43.624859 utc time
+Account 0:
+=1905877.8 total
+-----
+Rub: 661288.6
+QIWI -1.21% : 628767.6 -> 621169.2 (Goal: +3.26%)
+MRKV 0.14% : 622566.0 -> 623420.0 (Goal: +1.93%)
+
+Account 1:
+=1863534.7 total
+-----
+Rub: 641173.3
+QIWI -2.87% : 625560.9 -> 607631.4 (Goal: +8.86%)
+VRSB 0.00% : 614730.0 -> 614730.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+10:11:45.102658 utc time
+Account 0:
+=1906319.4 total
+-----
+Rub: 661288.6
+QIWI -1.41% : 628767.6 -> 619902.8 (Goal: +3.26%)
+MRKV 0.41% : 622566.0 -> 625128.0 (Goal: +1.93%)
+
+Account 1:
+=1863690.9 total
+-----
+Rub: 641173.3
+QIWI -3.06% : 625560.9 -> 606392.6 (Goal: +8.86%)
+VRSB 0.23% : 614730.0 -> 616125.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+10:21:46.674471 utc time
+Account 0:
+=1911855.8 total
+-----
+Rub: 661288.6
+QIWI -1.21% : 628767.6 -> 621169.2 (Goal: +3.26%)
+MRKV 1.10% : 622566.0 -> 629398.0 (Goal: +1.93%)
+
+Account 1:
+=1863999.7 total
+-----
+Rub: 641173.3
+QIWI -2.87% : 625560.9 -> 607631.4 (Goal: +8.86%)
+VRSB 0.08% : 614730.0 -> 615195.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+10:31:48.163024 utc time
+Account 0:
+=1910589.4 total
+-----
+Rub: 661288.6
+QIWI -1.41% : 628767.6 -> 619902.8 (Goal: +3.26%)
+MRKV 1.10% : 622566.0 -> 629398.0 (Goal: +1.93%)
+
+Account 1:
+=1862760.9 total
+-----
+Rub: 641173.3
+QIWI -3.06% : 625560.9 -> 606392.6 (Goal: +8.86%)
+VRSB 0.08% : 614730.0 -> 615195.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+10:41:49.862577 utc time
+Account 0:
+=1910795.6 total
+-----
+Rub: 661288.6
+QIWI -1.31% : 628767.6 -> 620536.0 (Goal: +3.26%)
+MRKV 1.03% : 622566.0 -> 628971.0 (Goal: +1.93%)
+
+Account 1:
+=1863845.3 total
+-----
+Rub: 641173.3
+QIWI -2.97% : 625560.9 -> 607012.0 (Goal: +8.86%)
+VRSB 0.15% : 614730.0 -> 615660.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+10:51:51.348967 utc time
+Account 0:
+=1910574.8 total
+-----
+Rub: 661288.6
+QIWI -1.21% : 628767.6 -> 621169.2 (Goal: +3.26%)
+MRKV 0.89% : 622566.0 -> 628117.0 (Goal: +1.93%)
+
+Account 1:
+=1864464.7 total
+-----
+Rub: 641173.3
+QIWI -2.87% : 625560.9 -> 607631.4 (Goal: +8.86%)
+VRSB 0.15% : 614730.0 -> 615660.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+11:01:52.721623 utc time
+Account 0:
+=1910795.6 total
+-----
+Rub: 661288.6
+QIWI -1.31% : 628767.6 -> 620536.0 (Goal: +3.26%)
+MRKV 1.03% : 622566.0 -> 628971.0 (Goal: +1.93%)
+
+Account 1:
+=1862915.3 total
+-----
+Rub: 641173.3
+QIWI -2.97% : 625560.9 -> 607012.0 (Goal: +8.86%)
+VRSB 0.00% : 614730.0 -> 614730.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+11:11:54.275260 utc time
+Account 0:
+=1912503.6 total
+-----
+Rub: 661288.6
+QIWI -1.31% : 628767.6 -> 620536.0 (Goal: +3.26%)
+MRKV 1.30% : 622566.0 -> 630679.0 (Goal: +1.93%)
+
+Account 1:
+=1859660.3 total
+-----
+Rub: 641173.3
+QIWI -2.97% : 625560.9 -> 607012.0 (Goal: +8.86%)
+VRSB -0.53% : 614730.0 -> 611475.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+11:21:55.705535 utc time
+Account 0:
+=1913151.4 total
+-----
+Rub: 661288.6
+QIWI -1.41% : 628767.6 -> 619902.8 (Goal: +3.26%)
+MRKV 1.51% : 622566.0 -> 631960.0 (Goal: +1.93%)
+
+Account 1:
+=1862760.9 total
+-----
+Rub: 641173.3
+QIWI -3.06% : 625560.9 -> 606392.6 (Goal: +8.86%)
+VRSB 0.08% : 614730.0 -> 615195.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+11:31:57.246333 utc time
+Account 0:
+=1911458.0 total
+-----
+Rub: 661288.6
+QIWI -1.61% : 628767.6 -> 618636.4 (Goal: +3.26%)
+MRKV 1.44% : 622566.0 -> 631533.0 (Goal: +1.93%)
+
+Account 1:
+=1861522.1 total
+-----
+Rub: 641173.3
+QIWI -3.26% : 625560.9 -> 605153.8 (Goal: +8.86%)
+VRSB 0.08% : 614730.0 -> 615195.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+11:41:58.853649 utc time
+Account 0:
+=1914226.2 total
+-----
+Rub: 661288.6
+QIWI -1.51% : 628767.6 -> 619269.6 (Goal: +3.26%)
+MRKV 1.78% : 622566.0 -> 633668.0 (Goal: +1.93%)
+
+Account 1:
+=1862141.5 total
+-----
+Rub: 641173.3
+QIWI -3.16% : 625560.9 -> 605773.2 (Goal: +8.86%)
+VRSB 0.08% : 614730.0 -> 615195.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+11:52:00.402982 utc time
+Account 0:
+=1913386.8 total
+-----
+Rub: 661288.6
+QIWI -1.71% : 628767.6 -> 618003.2 (Goal: +3.26%)
+MRKV 1.85% : 622566.0 -> 634095.0 (Goal: +1.93%)
+
+Account 1:
+=1861367.7 total
+-----
+Rub: 641173.3
+QIWI -3.36% : 625560.9 -> 604534.4 (Goal: +8.86%)
+VRSB 0.15% : 614730.0 -> 615660.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+12:02:02.096945 utc time
+Account 0:
+=1914447.0 total
+-----
+Rub: 661288.6
+QIWI -1.61% : 628767.6 -> 618636.4 (Goal: +3.26%)
+MRKV 1.92% : 622566.0 -> 634522.0 (Goal: +1.93%)
+
+Account 1:
+=1862917.1 total
+-----
+Rub: 641173.3
+QIWI -3.26% : 625560.9 -> 605153.8 (Goal: +8.86%)
+VRSB 0.30% : 614730.0 -> 616590.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+12:12:03.671212 utc time
+Account 0:
+=1911031.0 total
+-----
+Rub: 661288.6
+QIWI -1.61% : 628767.6 -> 618636.4 (Goal: +3.26%)
+MRKV 1.37% : 622566.0 -> 631106.0 (Goal: +1.93%)
+
+Account 1:
+=1862452.1 total
+-----
+Rub: 641173.3
+QIWI -3.26% : 625560.9 -> 605153.8 (Goal: +8.86%)
+VRSB 0.23% : 614730.0 -> 616125.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+12:22:05.233367 utc time
+Account 0:
+=1913166.0 total
+-----
+Rub: 661288.6
+QIWI -1.61% : 628767.6 -> 618636.4 (Goal: +3.26%)
+MRKV 1.71% : 622566.0 -> 633241.0 (Goal: +1.93%)
+
+Account 1:
+=1862917.1 total
+-----
+Rub: 641173.3
+QIWI -3.26% : 625560.9 -> 605153.8 (Goal: +8.86%)
+VRSB 0.30% : 614730.0 -> 616590.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+12:32:06.784655 utc time
+Account 0:
+=1913151.4 total
+-----
+Rub: 661288.6
+QIWI -1.41% : 628767.6 -> 619902.8 (Goal: +3.26%)
+MRKV 1.51% : 622566.0 -> 631960.0 (Goal: +1.93%)
+
+Account 1:
+=1863225.9 total
+-----
+Rub: 641173.3
+QIWI -3.06% : 625560.9 -> 606392.6 (Goal: +8.86%)
+VRSB 0.15% : 614730.0 -> 615660.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+12:42:08.346277 utc time
+Account 0:
+=1911458.0 total
+-----
+Rub: 661288.6
+QIWI -1.61% : 628767.6 -> 618636.4 (Goal: +3.26%)
+MRKV 1.44% : 622566.0 -> 631533.0 (Goal: +1.93%)
+
+Account 1:
+=1862452.1 total
+-----
+Rub: 641173.3
+QIWI -3.26% : 625560.9 -> 605153.8 (Goal: +8.86%)
+VRSB 0.23% : 614730.0 -> 616125.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+12:52:09.733373 utc time
+Account 0:
+=1911885.0 total
+-----
+Rub: 661288.6
+QIWI -1.61% : 628767.6 -> 618636.4 (Goal: +3.26%)
+MRKV 1.51% : 622566.0 -> 631960.0 (Goal: +1.93%)
+
+Account 1:
+=1862452.1 total
+-----
+Rub: 641173.3
+QIWI -3.26% : 625560.9 -> 605153.8 (Goal: +8.86%)
+VRSB 0.23% : 614730.0 -> 616125.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+13:02:11.242788 utc time
+Account 0:
+=1910618.6 total
+-----
+Rub: 661288.6
+QIWI -1.81% : 628767.6 -> 617370.0 (Goal: +3.26%)
+MRKV 1.51% : 622566.0 -> 631960.0 (Goal: +1.93%)
+
+Account 1:
+=1860283.3 total
+-----
+Rub: 641173.3
+QIWI -3.46% : 625560.9 -> 603915.0 (Goal: +8.86%)
+VRSB 0.08% : 614730.0 -> 615195.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+13:12:12.806418 utc time
+Account 0:
+=1912091.2 total
+-----
+Rub: 661288.6
+QIWI -1.51% : 628767.6 -> 619269.6 (Goal: +3.26%)
+MRKV 1.44% : 622566.0 -> 631533.0 (Goal: +1.93%)
+
+Account 1:
+=1862141.5 total
+-----
+Rub: 641173.3
+QIWI -3.16% : 625560.9 -> 605773.2 (Goal: +8.86%)
+VRSB 0.08% : 614730.0 -> 615195.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+13:22:14.486042 utc time
+Account 0:
+=1907879.6 total
+-----
+Rub: 661288.6
+QIWI -2.32% : 628767.6 -> 614204.0 (Goal: +3.26%)
+MRKV 1.58% : 622566.0 -> 632387.0 (Goal: +1.93%)
+
+Account 1:
+=1855326.3 total
+-----
+Rub: 641173.3
+QIWI -3.96% : 625560.9 -> 600818.0 (Goal: +8.86%)
+VRSB -0.23% : 614730.0 -> 613335.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+13:32:16.029181 utc time
+Account 0:
+=1908085.8 total
+-----
+Rub: 661288.6
+QIWI -2.22% : 628767.6 -> 614837.2 (Goal: +3.26%)
+MRKV 1.51% : 622566.0 -> 631960.0 (Goal: +1.93%)
+
+Account 1:
+=1855945.7 total
+-----
+Rub: 641173.3
+QIWI -3.86% : 625560.9 -> 601437.4 (Goal: +8.86%)
+VRSB -0.23% : 614730.0 -> 613335.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+13:42:17.770224 utc time
+Account 0:
+=1909573.0 total
+-----
+Rub: 661288.6
+QIWI -2.11% : 628767.6 -> 615470.4 (Goal: +3.26%)
+MRKV 1.65% : 622566.0 -> 632814.0 (Goal: +1.93%)
+
+Account 1:
+=1856565.1 total
+-----
+Rub: 641173.3
+QIWI -3.76% : 625560.9 -> 602056.8 (Goal: +8.86%)
+VRSB -0.23% : 614730.0 -> 613335.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+13:52:19.171411 utc time
+Account 0:
+=1910427.0 total
+-----
+Rub: 661288.6
+QIWI -2.11% : 628767.6 -> 615470.4 (Goal: +3.26%)
+MRKV 1.78% : 622566.0 -> 633668.0 (Goal: +1.93%)
+
+Account 1:
+=1857960.1 total
+-----
+Rub: 641173.3
+QIWI -3.76% : 625560.9 -> 602056.8 (Goal: +8.86%)
+VRSB 0.00% : 614730.0 -> 614730.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+14:02:20.866048 utc time
+Account 0:
+=1912768.2 total
+-----
+Rub: 661288.6
+QIWI -2.01% : 628767.6 -> 616103.6 (Goal: +3.26%)
+MRKV 2.06% : 622566.0 -> 635376.0 (Goal: +1.93%)
+
+Account 1:
+=1858579.5 total
+-----
+Rub: 641173.3
+QIWI -3.66% : 625560.9 -> 602676.2 (Goal: +8.86%)
+VRSB 0.00% : 614730.0 -> 614730.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+14:12:22.493341 utc time
+Account 0:
+=1910441.6 total
+-----
+Rub: 661288.6
+QIWI -2.32% : 628767.6 -> 614204.0 (Goal: +3.26%)
+MRKV 1.99% : 622566.0 -> 634949.0 (Goal: +1.93%)
+
+Account 1:
+=1856256.3 total
+-----
+Rub: 641173.3
+QIWI -3.96% : 625560.9 -> 600818.0 (Goal: +8.86%)
+VRSB -0.08% : 614730.0 -> 614265.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+14:22:24.282617 utc time
+Account 0:
+=1910441.6 total
+-----
+Rub: 661288.6
+QIWI -2.32% : 628767.6 -> 614204.0 (Goal: +3.26%)
+MRKV 1.99% : 622566.0 -> 634949.0 (Goal: +1.93%)
+
+Account 1:
+=1856256.3 total
+-----
+Rub: 641173.3
+QIWI -3.96% : 625560.9 -> 600818.0 (Goal: +8.86%)
+VRSB -0.08% : 614730.0 -> 614265.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+14:32:25.950631 utc time
+Account 0:
+=1909366.8 total
+-----
+Rub: 661288.6
+QIWI -2.22% : 628767.6 -> 614837.2 (Goal: +3.26%)
+MRKV 1.71% : 622566.0 -> 633241.0 (Goal: +1.93%)
+
+Account 1:
+=1853155.7 total
+-----
+Rub: 641173.3
+QIWI -3.86% : 625560.9 -> 601437.4 (Goal: +8.86%)
+VRSB -0.68% : 614730.0 -> 610545.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+14:42:27.554385 utc time
+Account 0:
+=1916817.4 total
+-----
+Rub: 661288.6
+QIWI -1.91% : 628767.6 -> 616736.8 (Goal: +3.26%)
+MRKV 2.61% : 622566.0 -> 638792.0 (Goal: +1.93%)
+
+Account 1:
+=1853618.9 total
+-----
+Rub: 641173.3
+QIWI -3.56% : 625560.9 -> 603295.6 (Goal: +8.86%)
+VRSB -0.91% : 614730.0 -> 609150.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+14:52:29.233321 utc time
+Account 0:
+=1911914.2 total
+-----
+Rub: 661288.6
+QIWI -2.01% : 628767.6 -> 616103.6 (Goal: +3.26%)
+MRKV 1.92% : 622566.0 -> 634522.0 (Goal: +1.93%)
+
+Account 1:
+=1854859.5 total
+-----
+Rub: 641173.3
+QIWI -3.66% : 625560.9 -> 602676.2 (Goal: +8.86%)
+VRSB -0.61% : 614730.0 -> 611010.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+15:02:30.791192 utc time
+Account 0:
+=1907865.0 total
+-----
+Rub: 661288.6
+QIWI -2.11% : 628767.6 -> 615470.4 (Goal: +3.26%)
+MRKV 1.37% : 622566.0 -> 631106.0 (Goal: +1.93%)
+
+Account 1:
+=1855170.1 total
+-----
+Rub: 641173.3
+QIWI -3.76% : 625560.9 -> 602056.8 (Goal: +8.86%)
+VRSB -0.45% : 614730.0 -> 611940.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+15:12:32.205496 utc time
+Account 0:
+=1898691.8 total
+-----
+Rub: 661288.6
+QIWI -2.22% : 628767.6 -> 614837.2 (Goal: +3.26%)
+MRKV 0.00% : 622566.0 -> 622566.0 (Goal: +1.93%)
+
+Account 1:
+=1854550.7 total
+-----
+Rub: 641173.3
+QIWI -3.86% : 625560.9 -> 601437.4 (Goal: +8.86%)
+VRSB -0.45% : 614730.0 -> 611940.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+15:22:33.770722 utc time
+Account 0:
+=1899972.8 total
+-----
+Rub: 661288.6
+QIWI -2.22% : 628767.6 -> 614837.2 (Goal: +3.26%)
+MRKV 0.21% : 622566.0 -> 623847.0 (Goal: +1.93%)
+
+Account 1:
+=1853155.7 total
+-----
+Rub: 641173.3
+QIWI -3.86% : 625560.9 -> 601437.4 (Goal: +8.86%)
+VRSB -0.68% : 614730.0 -> 610545.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+15:32:35.368117 utc time
+Account 0:
+=1898279.4 total
+-----
+Rub: 661288.6
+QIWI -2.42% : 628767.6 -> 613570.8 (Goal: +3.26%)
+MRKV 0.14% : 622566.0 -> 623420.0 (Goal: +1.93%)
+
+Account 1:
+=1852381.9 total
+-----
+Rub: 641173.3
+QIWI -4.05% : 625560.9 -> 600198.6 (Goal: +8.86%)
+VRSB -0.61% : 614730.0 -> 611010.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+0: Cancelling staled sell order for MRKV
+CancelOrderResponse(time=datetime.datetime(2024, 5, 10, 15, 32, 36, 774287, tzinfo=datetime.timezone.utc), response_metadata=ResponseMetadata(tracking_id='b35622ab39c40f2eb96e00b057cb598b', server_time=datetime.datetime(2024, 5, 10, 15, 32, 36, 777130, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+15:32:37.885076 utc time
+Account 0:
+=1898279.4 total
+-----
+Rub: 661288.6
+QIWI -2.42% : 628767.6 -> 613570.8 (Goal: +3.26%)
+MRKV 0.14% : 622566.0 -> 623420.0 (Goal: +1.93%)
+
+Account 1:
+=1852381.9 total
+-----
+Rub: 641173.3
+QIWI -4.05% : 625560.9 -> 600198.6 (Goal: +8.86%)
+VRSB -0.61% : 614730.0 -> 611010.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+0: Market price sell on exchange closing for MRKV
+PostOrderResponse(order_id='682d1c16-b701-43a1-8ed5-c1b83e020879', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=854, lots_executed=854, initial_order_price=MoneyValue(currency='rub', units=623420, nano=0), executed_order_price=MoneyValue(currency='rub', units=0, nano=73000000), total_order_amount=MoneyValue(currency='rub', units=623420, nano=0), initial_commission=MoneyValue(currency='rub', units=311, nano=710000000), executed_commission=MoneyValue(currency='rub', units=311, nano=710000000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG000PKWCQ7', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=0, nano=73000000), order_type=<OrderType.ORDER_TYPE_MARKET: 2>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='8ec4edb6-b779-4e3c-9146-b11210174d51', order_request_id='80da35e1-c098-4dd4-aa68-a4ac8dcf4168', response_metadata=ResponseMetadata(tracking_id='655ccd9cf7705ac07c4268a9aaef388d', server_time=datetime.datetime(2024, 5, 10, 15, 32, 39, 350097, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+15:32:40.437436 utc time
+Account 0:
+=1897967.7 total
+-----
+Rub: 1284396.9
+QIWI -2.42% : 628767.6 -> 613570.8 (Goal: +3.26%)
+
+Account 1:
+=1852381.9 total
+-----
+Rub: 641173.3
+QIWI -4.05% : 625560.9 -> 600198.6 (Goal: +8.86%)
+VRSB -0.61% : 614730.0 -> 611010.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+1: Cancelling staled sell order for VRSB
+CancelOrderResponse(time=datetime.datetime(2024, 5, 10, 15, 32, 41, 750375, tzinfo=datetime.timezone.utc), response_metadata=ResponseMetadata(tracking_id='ac1dccfde902da35801e65fd701b4313', server_time=datetime.datetime(2024, 5, 10, 15, 32, 41, 754506, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+15:32:42.844135 utc time
+Account 0:
+=1897967.7 total
+-----
+Rub: 1284396.9
+QIWI -2.42% : 628767.6 -> 613570.8 (Goal: +3.26%)
+
+Account 1:
+=1852381.9 total
+-----
+Rub: 641173.3
+QIWI -4.05% : 625560.9 -> 600198.6 (Goal: +8.86%)
+VRSB -0.61% : 614730.0 -> 611010.0 (Goal: +3.08%)
+
+>>> SELL STAGE
+1: Market price sell on exchange closing for VRSB
+PostOrderResponse(order_id='2b30e9b6-658f-4d67-844f-3516fc8dc2d6', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=93, lots_executed=93, initial_order_price=MoneyValue(currency='rub', units=611010, nano=0), executed_order_price=MoneyValue(currency='rub', units=657, nano=0), total_order_amount=MoneyValue(currency='rub', units=611010, nano=0), initial_commission=MoneyValue(currency='rub', units=305, nano=505000000), executed_commission=MoneyValue(currency='rub', units=305, nano=505000000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG000BX7DH0', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=657, nano=0), order_type=<OrderType.ORDER_TYPE_MARKET: 2>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='3c899002-e8f5-42fd-b617-4bc2f31e6767', order_request_id='d2579eef-37f3-4b8a-aa81-fbe5b4b991ce', response_metadata=ResponseMetadata(tracking_id='be2edb2ddb31d303c9b855ae5bf8c360', server_time=datetime.datetime(2024, 5, 10, 15, 32, 44, 170239, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+15:32:45.257886 utc time
+Account 0:
+=1897967.7 total
+-----
+Rub: 1284396.9
+QIWI -2.42% : 628767.6 -> 613570.8 (Goal: +3.26%)
+
+Account 1:
+=1852076.4 total
+-----
+Rub: 1251877.8
+QIWI -4.05% : 625560.9 -> 600198.6 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+15:42:46.581653 utc time
+Account 0:
+=1901766.9 total
+-----
+Rub: 1284396.9
+QIWI -1.81% : 628767.6 -> 617370.0 (Goal: +3.26%)
+
+Account 1:
+=1855792.8 total
+-----
+Rub: 1251877.8
+QIWI -3.46% : 625560.9 -> 603915.0 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+15:52:48.349041 utc time
+Account 0:
+=1900500.5 total
+-----
+Rub: 1284396.9
+QIWI -2.01% : 628767.6 -> 616103.6 (Goal: +3.26%)
+
+Account 1:
+=1854554.0 total
+-----
+Rub: 1251877.8
+QIWI -3.66% : 625560.9 -> 602676.2 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+16:02:49.753321 utc time
+Account 0:
+=1900500.5 total
+-----
+Rub: 1284396.9
+QIWI -2.01% : 628767.6 -> 616103.6 (Goal: +3.26%)
+
+Account 1:
+=1854554.0 total
+-----
+Rub: 1251877.8
+QIWI -3.66% : 625560.9 -> 602676.2 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+16:12:51.242408 utc time
+Account 0:
+=1900500.5 total
+-----
+Rub: 1284396.9
+QIWI -2.01% : 628767.6 -> 616103.6 (Goal: +3.26%)
+
+Account 1:
+=1854554.0 total
+-----
+Rub: 1251877.8
+QIWI -3.66% : 625560.9 -> 602676.2 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+16:22:52.868807 utc time
+Account 0:
+=1897334.5 total
+-----
+Rub: 1284396.9
+QIWI -2.52% : 628767.6 -> 612937.6 (Goal: +3.26%)
+
+Account 1:
+=1851457.0 total
+-----
+Rub: 1251877.8
+QIWI -4.15% : 625560.9 -> 599579.2 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+16:32:54.386475 utc time
+Account 0:
+=1901133.7 total
+-----
+Rub: 1284396.9
+QIWI -1.91% : 628767.6 -> 616736.8 (Goal: +3.26%)
+
+Account 1:
+=1855173.4 total
+-----
+Rub: 1251877.8
+QIWI -3.56% : 625560.9 -> 603295.6 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+16:42:55.877096 utc time
+Account 0:
+=1902400.1 total
+-----
+Rub: 1284396.9
+QIWI -1.71% : 628767.6 -> 618003.2 (Goal: +3.26%)
+
+Account 1:
+=1856412.2 total
+-----
+Rub: 1251877.8
+QIWI -3.36% : 625560.9 -> 604534.4 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+16:52:57.574314 utc time
+Account 0:
+=1897967.7 total
+-----
+Rub: 1284396.9
+QIWI -2.42% : 628767.6 -> 613570.8 (Goal: +3.26%)
+
+Account 1:
+=1852076.4 total
+-----
+Rub: 1251877.8
+QIWI -4.05% : 625560.9 -> 600198.6 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+17:02:59.309913 utc time
+Account 0:
+=1899234.1 total
+-----
+Rub: 1284396.9
+QIWI -2.22% : 628767.6 -> 614837.2 (Goal: +3.26%)
+
+Account 1:
+=1853315.2 total
+-----
+Rub: 1251877.8
+QIWI -3.86% : 625560.9 -> 601437.4 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+17:13:01.170407 utc time
+Account 0:
+=1899234.1 total
+-----
+Rub: 1284396.9
+QIWI -2.22% : 628767.6 -> 614837.2 (Goal: +3.26%)
+
+Account 1:
+=1853315.2 total
+-----
+Rub: 1251877.8
+QIWI -3.86% : 625560.9 -> 601437.4 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+17:23:02.760409 utc time
+Account 0:
+=1899234.1 total
+-----
+Rub: 1284396.9
+QIWI -2.22% : 628767.6 -> 614837.2 (Goal: +3.26%)
+
+Account 1:
+=1853315.2 total
+-----
+Rub: 1251877.8
+QIWI -3.86% : 625560.9 -> 601437.4 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+17:33:04.562394 utc time
+Account 0:
+=1898600.9 total
+-----
+Rub: 1284396.9
+QIWI -2.32% : 628767.6 -> 614204.0 (Goal: +3.26%)
+
+Account 1:
+=1852695.8 total
+-----
+Rub: 1251877.8
+QIWI -3.96% : 625560.9 -> 600818.0 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+17:43:06.283634 utc time
+Account 0:
+=1899867.3 total
+-----
+Rub: 1284396.9
+QIWI -2.11% : 628767.6 -> 615470.4 (Goal: +3.26%)
+
+Account 1:
+=1853934.6 total
+-----
+Rub: 1251877.8
+QIWI -3.76% : 625560.9 -> 602056.8 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+17:53:07.937012 utc time
+Account 0:
+=1899867.3 total
+-----
+Rub: 1284396.9
+QIWI -2.11% : 628767.6 -> 615470.4 (Goal: +3.26%)
+
+Account 1:
+=1853934.6 total
+-----
+Rub: 1251877.8
+QIWI -3.76% : 625560.9 -> 602056.8 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+18:03:09.362476 utc time
+Account 0:
+=1899234.1 total
+-----
+Rub: 1284396.9
+QIWI -2.22% : 628767.6 -> 614837.2 (Goal: +3.26%)
+
+Account 1:
+=1853315.2 total
+-----
+Rub: 1251877.8
+QIWI -3.86% : 625560.9 -> 601437.4 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+18:13:10.787843 utc time
+Account 0:
+=1899867.3 total
+-----
+Rub: 1284396.9
+QIWI -2.11% : 628767.6 -> 615470.4 (Goal: +3.26%)
+
+Account 1:
+=1853934.6 total
+-----
+Rub: 1251877.8
+QIWI -3.76% : 625560.9 -> 602056.8 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+18:23:12.507013 utc time
+Account 0:
+=1900500.5 total
+-----
+Rub: 1284396.9
+QIWI -2.01% : 628767.6 -> 616103.6 (Goal: +3.26%)
+
+Account 1:
+=1854554.0 total
+-----
+Rub: 1251877.8
+QIWI -3.66% : 625560.9 -> 602676.2 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+18:33:14.300097 utc time
+Account 0:
+=1899234.1 total
+-----
+Rub: 1284396.9
+QIWI -2.22% : 628767.6 -> 614837.2 (Goal: +3.26%)
+
+Account 1:
+=1853315.2 total
+-----
+Rub: 1251877.8
+QIWI -3.86% : 625560.9 -> 601437.4 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+18:43:15.862869 utc time
+Account 0:
+=1898600.9 total
+-----
+Rub: 1284396.9
+QIWI -2.32% : 628767.6 -> 614204.0 (Goal: +3.26%)
+
+Account 1:
+=1852695.8 total
+-----
+Rub: 1251877.8
+QIWI -3.96% : 625560.9 -> 600818.0 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+18:53:17.420707 utc time
+Account 0:
+=1897967.7 total
+-----
+Rub: 1284396.9
+QIWI -2.42% : 628767.6 -> 613570.8 (Goal: +3.26%)
+
+Account 1:
+=1852076.4 total
+-----
+Rub: 1251877.8
+QIWI -4.05% : 625560.9 -> 600198.6 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+Loading trained models..
+Done loading trained models
+############
+Today is 2024-05-10
+=======
+20:33:13.222416 utc time
+Account 0:
+=1897967.7 total
+-----
+Rub: 1284396.9
+QIWI -2.42% : 628767.6 -> 613570.8 (Goal: +3.26%)
+
+Account 1:
+=1852076.4 total
+-----
+Rub: 1251877.8
+QIWI -4.05% : 625560.9 -> 600198.6 (Goal: +8.86%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+20:43:18.118669 utc time
+Account 0:
+=1899234.1 total
+-----
+Rub: 1284396.9
+QIWI -2.22% : 628767.6 -> 614837.2 (Goal: +3.26%)
+
+Account 1:
+=1853315.2 total
+-----
+Rub: 1251877.8
+QIWI -3.86% : 625560.9 -> 601437.4 (Goal: +8.86%)
+
+>>> SELL STAGE
+0: Cancelling staled sell order for QIWI
+CancelOrderResponse(time=datetime.datetime(2024, 5, 10, 20, 43, 21, 563199, tzinfo=datetime.timezone.utc), response_metadata=ResponseMetadata(tracking_id='f59cfb43a60744b81685b619c53ee639', server_time=datetime.datetime(2024, 5, 10, 20, 43, 21, 565919, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+20:43:22.752905 utc time
+Account 0:
+=1899234.1 total
+-----
+Rub: 1284396.9
+QIWI -2.22% : 628767.6 -> 614837.2 (Goal: +3.26%)
+
+Account 1:
+=1853315.2 total
+-----
+Rub: 1251877.8
+QIWI -3.86% : 625560.9 -> 601437.4 (Goal: +8.86%)
+
+>>> SELL STAGE
+0: Market price sell on exchange closing for QIWI
+PostOrderResponse(order_id='c20c6636-73ac-49ea-b526-1788289c6867', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=3166, lots_executed=3166, initial_order_price=MoneyValue(currency='rub', units=614837, nano=200000000), executed_order_price=MoneyValue(currency='rub', units=194, nano=200000000), total_order_amount=MoneyValue(currency='rub', units=614837, nano=200000000), initial_commission=MoneyValue(currency='rub', units=307, nano=418600000), executed_commission=MoneyValue(currency='rub', units=307, nano=418600000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG005D1WCQ1', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=194, nano=200000000), order_type=<OrderType.ORDER_TYPE_MARKET: 2>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='120a928b-b2d6-45d7-a445-f6e49614ae6d', order_request_id='13916ba2-7c92-4976-8aa1-2c707e0a755e', response_metadata=ResponseMetadata(tracking_id='aa0f375e5e6c56468e7ea82a06fe7605', server_time=datetime.datetime(2024, 5, 10, 20, 43, 25, 632505, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+20:43:26.794881 utc time
+Account 0:
+=1898926.7 total
+-----
+Rub: 1898926.7
+
+Account 1:
+=1853315.2 total
+-----
+Rub: 1251877.8
+QIWI -3.86% : 625560.9 -> 601437.4 (Goal: +8.86%)
+
+>>> SELL STAGE
+1: Cancelling staled sell order for QIWI
+CancelOrderResponse(time=datetime.datetime(2024, 5, 10, 20, 43, 29, 624081, tzinfo=datetime.timezone.utc), response_metadata=ResponseMetadata(tracking_id='e25d4ffad4199ad91b61f1c7332befcc', server_time=datetime.datetime(2024, 5, 10, 20, 43, 29, 626246, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+20:43:30.787059 utc time
+Account 0:
+=1898926.7 total
+-----
+Rub: 1898926.7
+
+Account 1:
+=1853315.2 total
+-----
+Rub: 1251877.8
+QIWI -3.86% : 625560.9 -> 601437.4 (Goal: +8.86%)
+
+>>> SELL STAGE
+1: Market price sell on exchange closing for QIWI
+PostOrderResponse(order_id='6a91f1bd-5e1d-4cdc-988c-321216f3216d', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=3097, lots_executed=3097, initial_order_price=MoneyValue(currency='rub', units=601437, nano=400000000), executed_order_price=MoneyValue(currency='rub', units=194, nano=200000000), total_order_amount=MoneyValue(currency='rub', units=601437, nano=400000000), initial_commission=MoneyValue(currency='rub', units=300, nano=718700000), executed_commission=MoneyValue(currency='rub', units=300, nano=718700000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG005D1WCQ1', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=194, nano=200000000), order_type=<OrderType.ORDER_TYPE_MARKET: 2>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='120a928b-b2d6-45d7-a445-f6e49614ae6d', order_request_id='fa629f03-71da-47cb-989f-c0a3726bae68', response_metadata=ResponseMetadata(tracking_id='776b010b1d56b0a6723be7d45262b0d9', server_time=datetime.datetime(2024, 5, 10, 20, 43, 33, 646538, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+20:43:34.846728 utc time
+Account 0:
+=1898926.7 total
+-----
+Rub: 1898926.7
+
+Account 1:
+=1853014.5 total
+-----
+Rub: 1853014.5
+
+>>> SELL STAGE
+No positions to sell anymore
+Waiting for 120 minutes
+Loading trained models..
+Done loading trained models
+############
+Today is 2024-05-12
+=======
+06:40:24.531700 utc time
+>>> No trading today
+Waiting for 300 minutes
+=======
+06:45:42.800444 utc time
+>>> No trading today
+Waiting for 300 minutes
+Loading trained models..
+Done loading trained models
+############
+Today is 2024-05-13
+=======
+06:50:46.182615 utc time
+Account 0:
+=3898926.7 total
+-----
+Rub: 3898926.7
+
+Account 1:
+=3853014.5 total
+-----
+Rub: 3853014.5
+
+>>> PREPARATION STAGE
+Waiting for 6 minutes
+=======
+06:56:57.317893 utc time
+Account 0:
+=3898926.7 total
+-----
+Rub: 3898926.7
+
+Account 1:
+=3853014.5 total
+-----
+Rub: 3853014.5
+
+>>> PREPARATION STAGE
+Waiting for 2 minutes
+=======
+06:59:00.030683 utc time
+Account 0:
+=3898926.7 total
+-----
+Rub: 3898926.7
+
+Account 1:
+=3853014.5 total
+-----
+Rub: 3853014.5
+
+>>> PREPARATION STAGE
+Waiting for 39 seconds
+=======
+06:59:40.589622 utc time
+Account 0:
+=3898926.7 total
+-----
+Rub: 3898926.7
+
+Account 1:
+=3853014.5 total
+-----
+Rub: 3853014.5
+
+>>> PREPARATION STAGE
+Waiting for 12 seconds
+=======
+06:59:54.135768 utc time
+Account 0:
+=3898926.7 total
+-----
+Rub: 3898926.7
+
+Account 1:
+=3853014.5 total
+-----
+Rub: 3853014.5
+
+>>> PREPARATION STAGE
+Waiting for 3 seconds
+=======
+06:59:58.376389 utc time
+Account 0:
+=3898926.7 total
+-----
+Rub: 3898926.7
+
+Account 1:
+=3853014.5 total
+-----
+Rub: 3853014.5
+
+>>> PREPARATION STAGE
+Waiting for 1 seconds
+=======
+07:00:00.639632 utc time
+Account 0:
+=3898926.7 total
+-----
+Rub: 3898926.7
+
+Account 1:
+=3853014.5 total
+-----
+Rub: 3853014.5
+
+>>> BUY STAGE
+Downloading candles...
+Done downloading candles
+Calculating predicts...
+Done calculating predicts
+0: Making buy order for QIWI at 196.98 for 1286476.38
+PostOrderResponse(order_id='cf33ee06-d80f-44c9-90b3-9ddf9714d861', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=6531, lots_executed=6531, initial_order_price=MoneyValue(currency='rub', units=1277463, nano=600000000), executed_order_price=MoneyValue(currency='rub', units=195, nano=600000000), total_order_amount=MoneyValue(currency='rub', units=1277463, nano=600000000), initial_commission=MoneyValue(currency='rub', units=638, nano=731800000), executed_commission=MoneyValue(currency='rub', units=638, nano=731800000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG005D1WCQ1', direction=<OrderDirection.ORDER_DIRECTION_BUY: 1>, initial_security_price=MoneyValue(currency='rub', units=195, nano=600000000), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='120a928b-b2d6-45d7-a445-f6e49614ae6d', order_request_id='922b186a-44df-481e-9a57-e7424df39709', response_metadata=ResponseMetadata(tracking_id='5b5139032868caeb9922492110df2186', server_time=datetime.datetime(2024, 5, 13, 7, 0, 32, 514640, tzinfo=datetime.timezone.utc)))
+0: Making buy order for PMSBP at 353.76 for 1284148.7999999998
+PostOrderResponse(order_id='426f446c-4ef0-4733-bc16-0358b249c60e', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=363, lots_executed=363, initial_order_price=MoneyValue(currency='rub', units=1276308, nano=0), executed_order_price=MoneyValue(currency='rub', units=351, nano=600000000), total_order_amount=MoneyValue(currency='rub', units=1276308, nano=0), initial_commission=MoneyValue(currency='rub', units=638, nano=154000000), executed_commission=MoneyValue(currency='rub', units=638, nano=154000000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG000MZL2S9', direction=<OrderDirection.ORDER_DIRECTION_BUY: 1>, initial_security_price=MoneyValue(currency='rub', units=351, nano=600000000), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='80a39145-b2f7-46f5-9ef0-1478baafb0a6', order_request_id='65667ce1-dbeb-49f9-a5f4-ed377a163537', response_metadata=ResponseMetadata(tracking_id='9abf010e37c9da3a241943c6eb038e4f', server_time=datetime.datetime(2024, 5, 13, 7, 0, 32, 683794, tzinfo=datetime.timezone.utc)))
+0: Making buy order for ORUP at 2.43612 for 1286644.0863599998
+PostOrderResponse(order_id='ea08be62-ac91-4fac-8622-b09ee4e4fd07', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=528153, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=1286644, nano=85831847), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=1286644, nano=85831847), initial_commission=MoneyValue(currency='rub', units=643, nano=322042915), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG001BBGNS2', direction=<OrderDirection.ORDER_DIRECTION_BUY: 1>, initial_security_price=MoneyValue(currency='rub', units=2, nano=436119999), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='85d3979a-8e8c-4652-8b61-2c020613ee70', order_request_id='4a777fc5-c339-40ac-9b0e-3a47e26e53c5', response_metadata=ResponseMetadata(tracking_id='aaa0c9671f22d1611aa0f93c223723f9', server_time=datetime.datetime(2024, 5, 13, 7, 0, 32, 845395, tzinfo=datetime.timezone.utc)))
+1: Making buy order for QIWI at 196.98 for 1271308.92
+PostOrderResponse(order_id='559690a8-ea15-40d8-b2fb-e2b9a0e33cde', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=6454, lots_executed=6454, initial_order_price=MoneyValue(currency='rub', units=1262402, nano=400000000), executed_order_price=MoneyValue(currency='rub', units=195, nano=600000000), total_order_amount=MoneyValue(currency='rub', units=1262402, nano=400000000), initial_commission=MoneyValue(currency='rub', units=631, nano=201200000), executed_commission=MoneyValue(currency='rub', units=631, nano=201200000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG005D1WCQ1', direction=<OrderDirection.ORDER_DIRECTION_BUY: 1>, initial_security_price=MoneyValue(currency='rub', units=195, nano=600000000), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='120a928b-b2d6-45d7-a445-f6e49614ae6d', order_request_id='58ca6f3b-5b28-44a0-bc31-35fc183207b2', response_metadata=ResponseMetadata(tracking_id='e6f4b2b05ebe7515a05b62250870af8f', server_time=datetime.datetime(2024, 5, 13, 7, 0, 33, 92562, tzinfo=datetime.timezone.utc)))
+1: Making buy order for ORUP at 2.43612 for 1271493.8560799998
+PostOrderResponse(order_id='a5a802c6-d7ee-403e-8213-783fc2b63f7c', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=521934, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=1271493, nano=855558066), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=1271493, nano=855558066), initial_commission=MoneyValue(currency='rub', units=635, nano=746927779), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG001BBGNS2', direction=<OrderDirection.ORDER_DIRECTION_BUY: 1>, initial_security_price=MoneyValue(currency='rub', units=2, nano=436119999), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='85d3979a-8e8c-4652-8b61-2c020613ee70', order_request_id='78d44190-d8f3-4c6f-8c98-f88d170572e5', response_metadata=ResponseMetadata(tracking_id='c0b1967bbd6ec94e38588460cc3724b8', server_time=datetime.datetime(2024, 5, 13, 7, 0, 33, 264388, tzinfo=datetime.timezone.utc)))
+1: Making buy order for PMSBP at 353.76 for 1269998.4
+PostOrderResponse(order_id='76175624-1f47-4b93-a8f8-dbfb5e970f5a', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=359, lots_executed=359, initial_order_price=MoneyValue(currency='rub', units=1262244, nano=0), executed_order_price=MoneyValue(currency='rub', units=351, nano=600000000), total_order_amount=MoneyValue(currency='rub', units=1262244, nano=0), initial_commission=MoneyValue(currency='rub', units=631, nano=122000000), executed_commission=MoneyValue(currency='rub', units=631, nano=122000000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG000MZL2S9', direction=<OrderDirection.ORDER_DIRECTION_BUY: 1>, initial_security_price=MoneyValue(currency='rub', units=351, nano=600000000), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='80a39145-b2f7-46f5-9ef0-1478baafb0a6', order_request_id='ccb915dd-ef3e-4b93-9ce6-a600a0ce0f85', response_metadata=ResponseMetadata(tracking_id='526ab86e70b0f7d15e12cb8e048b3858', server_time=datetime.datetime(2024, 5, 13, 7, 0, 33, 424288, tzinfo=datetime.timezone.utc)))
+Waiting for 5 minutes
+=======
+07:05:33.594147 utc time
+Account 0:
+=3884669.6 total
+-----
+Rub: 60881.5
+QIWI -0.71% : 1280035.6 -> 1270932.6 (Goal: +3.26%)
+PMSBP -0.46% : 1276308.0 -> 1270500.0 (Goal: +2.81%)
+ORUP 0.00% : 1282355.5 -> 1282355.5 (Goal: +1.57%)
+
+Account 1:
+=3838920.5 total
+-----
+Rub: 59216.4
+QIWI -1.97% : 1281181.9 -> 1255948.4 (Goal: +3.26%)
+PMSBP -0.46% : 1262244.0 -> 1256500.0 (Goal: +2.81%)
+ORUP 0.00% : 1267255.8 -> 1267255.8 (Goal: +3.09%)
+
+>>> BUY STAGE
+0: Making sell order for QIWI
+PostOrderResponse(order_id='4b880662-e8ee-4ba5-9f59-2a5a1c78bb5b', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=6531, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=1328409, nano=512315991), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=1328409, nano=512315991), initial_commission=MoneyValue(currency='rub', units=664, nano=204756157), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG005D1WCQ1', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=203, nano=400629661), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='120a928b-b2d6-45d7-a445-f6e49614ae6d', order_request_id='941e3cdc-d588-4ac9-8b4f-cc3fa74dcb58', response_metadata=ResponseMetadata(tracking_id='f23213337a6e214b552647444a089416', server_time=datetime.datetime(2024, 5, 13, 7, 5, 35, 299998, tzinfo=datetime.timezone.utc)))
+0: Making sell order for PMSBP
+PostOrderResponse(order_id='984fa5d5-814c-4207-bbef-dc4191117535', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=363, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=1320184, nano=502190180), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=1320184, nano=502190180), initial_commission=MoneyValue(currency='rub', units=660, nano=92251095), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG000MZL2S9', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=363, nano=687190686), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='80a39145-b2f7-46f5-9ef0-1478baafb0a6', order_request_id='b592f86c-adb1-488f-bf32-238188e33024', response_metadata=ResponseMetadata(tracking_id='cc54a78fa0b97b571687eca2e1fd9870', server_time=datetime.datetime(2024, 5, 13, 7, 5, 35, 463583, tzinfo=datetime.timezone.utc)))
+0: Making sell order for ORUP
+PostOrderResponse(order_id='7617481a-aedf-4195-97dd-dddb19eb08f4', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=528153, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=1306831, nano=781468835), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=1306831, nano=781468835), initial_commission=MoneyValue(currency='rub', units=653, nano=415890734), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG001BBGNS2', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=2, nano=474343195), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='85d3979a-8e8c-4652-8b61-2c020613ee70', order_request_id='7ffb3118-e4ef-46b8-9945-142aefa7d3cc', response_metadata=ResponseMetadata(tracking_id='680e98f8174b5928d72f9ace23095125', server_time=datetime.datetime(2024, 5, 13, 7, 5, 35, 626523, tzinfo=datetime.timezone.utc)))
+1: Making sell order for QIWI
+PostOrderResponse(order_id='b13f9547-24d4-44db-9993-31d19c74242c', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=6454, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=1312747, nano=663832094), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=1312747, nano=663832094), initial_commission=MoneyValue(currency='rub', units=656, nano=373831916), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG005D1WCQ1', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=203, nano=400629661), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='120a928b-b2d6-45d7-a445-f6e49614ae6d', order_request_id='45bb0fd4-04a7-4c96-8ca6-28be0a9d9881', response_metadata=ResponseMetadata(tracking_id='a854a878f50c7e26d16085328eccfa84', server_time=datetime.datetime(2024, 5, 13, 7, 5, 35, 793307, tzinfo=datetime.timezone.utc)))
+1: Making sell order for ORUP
+PostOrderResponse(order_id='a4f9f6c1-e935-4e4d-9e5a-b2a224d0658a', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=521934, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=1310808, nano=220425732), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=1310808, nano=220425732), initial_commission=MoneyValue(currency='rub', units=655, nano=404110212), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG001BBGNS2', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=2, nano=511444398), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='85d3979a-8e8c-4652-8b61-2c020613ee70', order_request_id='e66b543b-cd8d-43dd-9d66-deb27b23419d', response_metadata=ResponseMetadata(tracking_id='9d8413c4717f58218b044b8820278f36', server_time=datetime.datetime(2024, 5, 13, 7, 5, 35, 949981, tzinfo=datetime.timezone.utc)))
+1: Making sell order for PMSBP
+PostOrderResponse(order_id='a1e30c76-6402-4fc2-96ab-f2b4c62a73a8', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=359, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=1305637, nano=14562740), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=1305637, nano=14562740), initial_commission=MoneyValue(currency='rub', units=652, nano=818507281), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG000MZL2S9', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=363, nano=687190686), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='80a39145-b2f7-46f5-9ef0-1478baafb0a6', order_request_id='76d13ddd-547f-4c79-a490-ecc716e015b5', response_metadata=ResponseMetadata(tracking_id='e0875b58d0cba5918a52f70545935567', server_time=datetime.datetime(2024, 5, 13, 7, 5, 36, 116523, tzinfo=datetime.timezone.utc)))
+Waiting for 5 minutes
+=======
+07:10:36.260304 utc time
+Account 0:
+=3875075.5 total
+-----
+Rub: 60881.5
+QIWI -1.02% : 1280035.6 -> 1267014.0 (Goal: +3.26%)
+PMSBP -1.02% : 1276308.0 -> 1263240.0 (Goal: +2.81%)
+ORUP 0.12% : 1282355.5 -> 1283939.9 (Goal: +1.57%)
+
+Account 1:
+=3829433.9 total
+-----
+Rub: 59216.4
+QIWI -2.27% : 1281181.9 -> 1252076.0 (Goal: +3.26%)
+PMSBP -1.02% : 1262244.0 -> 1249320.0 (Goal: +2.81%)
+ORUP 0.12% : 1267255.8 -> 1268821.6 (Goal: +3.09%)
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:15:37.909325 utc time
+Account 0:
+=3890294.8 total
+-----
+Rub: 60881.5
+QIWI -0.81% : 1280035.6 -> 1269626.4 (Goal: +3.26%)
+PMSBP -0.28% : 1276308.0 -> 1272678.0 (Goal: +2.81%)
+ORUP 0.37% : 1282355.5 -> 1287108.9 (Goal: +1.57%)
+
+Account 1:
+=3844481.1 total
+-----
+Rub: 59216.4
+QIWI -2.07% : 1281181.9 -> 1254657.6 (Goal: +3.26%)
+PMSBP -0.28% : 1262244.0 -> 1258654.0 (Goal: +2.81%)
+ORUP 0.37% : 1267255.8 -> 1271953.2 (Goal: +3.09%)
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:20:39.386976 utc time
+Account 0:
+=3881148.4 total
+-----
+Rub: 60881.5
+QIWI -1.02% : 1280035.6 -> 1267014.0 (Goal: +3.26%)
+PMSBP -0.80% : 1276308.0 -> 1266144.0 (Goal: +2.81%)
+ORUP 0.37% : 1282355.5 -> 1287108.9 (Goal: +1.57%)
+
+Account 1:
+=3835437.5 total
+-----
+Rub: 59216.4
+QIWI -2.27% : 1281181.9 -> 1252076.0 (Goal: +3.26%)
+PMSBP -0.80% : 1262244.0 -> 1252192.0 (Goal: +2.81%)
+ORUP 0.37% : 1267255.8 -> 1271953.2 (Goal: +3.09%)
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:25:40.912269 utc time
+Account 0:
+=3880856.8 total
+-----
+Rub: 60881.5
+QIWI -0.81% : 1280035.6 -> 1269626.4 (Goal: +3.26%)
+PMSBP -1.02% : 1276308.0 -> 1263240.0 (Goal: +2.81%)
+ORUP 0.37% : 1282355.5 -> 1287108.9 (Goal: +1.57%)
+
+Account 1:
+=3835147.1 total
+-----
+Rub: 59216.4
+QIWI -2.07% : 1281181.9 -> 1254657.6 (Goal: +3.26%)
+PMSBP -1.02% : 1262244.0 -> 1249320.0 (Goal: +2.81%)
+ORUP 0.37% : 1267255.8 -> 1271953.2 (Goal: +3.09%)
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:30:42.549857 utc time
+Account 0:
+=3898566.4 total
+-----
+Rub: 60881.5
+QIWI 0.00% : 1280035.6 -> 1280076.0 (Goal: +3.26%)
+PMSBP -0.46% : 1276308.0 -> 1270500.0 (Goal: +2.81%)
+ORUP 0.37% : 1282355.5 -> 1287108.9 (Goal: +1.57%)
+
+Account 1:
+=3852653.5 total
+-----
+Rub: 59216.4
+QIWI -1.26% : 1281181.9 -> 1264984.0 (Goal: +3.26%)
+PMSBP -0.46% : 1262244.0 -> 1256500.0 (Goal: +2.81%)
+ORUP 0.37% : 1267255.8 -> 1271953.2 (Goal: +3.09%)
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:35:43.931514 utc time
+Account 0:
+=3937945.5 total
+-----
+Rub: 60881.5
+QIWI 3.57% : 1280035.6 -> 1325793.0 (Goal: +3.26%)
+PMSBP -0.46% : 1276308.0 -> 1270500.0 (Goal: +2.81%)
+ORUP -0.12% : 1282355.5 -> 1280771.0 (Goal: +1.57%)
+
+Account 1:
+=3891568.3 total
+-----
+Rub: 59216.4
+QIWI 2.26% : 1281181.9 -> 1310162.0 (Goal: +3.26%)
+PMSBP -0.46% : 1262244.0 -> 1256500.0 (Goal: +2.81%)
+ORUP -0.12% : 1267255.8 -> 1265689.9 (Goal: +3.09%)
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:40:45.696029 utc time
+Account 0:
+=3953214.3 total
+-----
+Rub: 1389928.3
+PMSBP -0.34% : 1276308.0 -> 1271952.0 (Goal: +2.81%)
+ORUP 0.70% : 1282355.5 -> 1291334.1 (Goal: +1.57%)
+
+Account 1:
+=3906658.4 total
+-----
+Rub: 1372593.8
+PMSBP -0.34% : 1262244.0 -> 1257936.0 (Goal: +2.81%)
+ORUP 0.70% : 1267255.8 -> 1276128.6 (Goal: +3.09%)
+
+>>> BUY STAGE
+0: Making buy order for QIWI at 196.98 for 458569.44
+PostOrderResponse(order_id='1c16a210-f29e-41a8-8088-bc0797d6730a', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=2328, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=458569, nano=439997672), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=458569, nano=439997672), initial_commission=MoneyValue(currency='rub', units=229, nano=284719998), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG005D1WCQ1', direction=<OrderDirection.ORDER_DIRECTION_BUY: 1>, initial_security_price=MoneyValue(currency='rub', units=196, nano=979999999), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='120a928b-b2d6-45d7-a445-f6e49614ae6d', order_request_id='3d8588c6-c22f-4d8e-859e-2b8d1d4775c7', response_metadata=ResponseMetadata(tracking_id='4be5733987b2fadd794a3513013efb15', server_time=datetime.datetime(2024, 5, 13, 7, 40, 47, 243655, tzinfo=datetime.timezone.utc)))
+1: Making buy order for QIWI at 196.98 for 452857.01999999996
+PostOrderResponse(order_id='27967c90-3762-40a7-b7ee-0a5ba02912d0', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_NEW: 4>, lots_requested=2299, lots_executed=0, initial_order_price=MoneyValue(currency='rub', units=452857, nano=19997701), executed_order_price=MoneyValue(currency='rub', units=0, nano=0), total_order_amount=MoneyValue(currency='rub', units=452857, nano=19997701), initial_commission=MoneyValue(currency='rub', units=226, nano=428509998), executed_commission=MoneyValue(currency='rub', units=0, nano=0), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG005D1WCQ1', direction=<OrderDirection.ORDER_DIRECTION_BUY: 1>, initial_security_price=MoneyValue(currency='rub', units=196, nano=979999999), order_type=<OrderType.ORDER_TYPE_LIMIT: 1>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='120a928b-b2d6-45d7-a445-f6e49614ae6d', order_request_id='124bff38-c740-4d59-9c6e-7ceeaec43a3e', response_metadata=ResponseMetadata(tracking_id='0f77ec79039110b4c786e67856628a88', server_time=datetime.datetime(2024, 5, 13, 7, 40, 47, 441420, tzinfo=datetime.timezone.utc)))
+Waiting for 5 minutes
+=======
+07:45:47.622275 utc time
+Account 0:
+=3948858.3 total
+-----
+Rub: 1389928.3
+PMSBP -0.68% : 1276308.0 -> 1267596.0 (Goal: +2.81%)
+ORUP 0.70% : 1282355.5 -> 1291334.1 (Goal: +1.57%)
+...-> QIWI for 458569.4
+
+Account 1:
+=3902350.4 total
+-----
+Rub: 1372593.8
+PMSBP -0.68% : 1262244.0 -> 1253628.0 (Goal: +2.81%)
+ORUP 0.70% : 1267255.8 -> 1276128.6 (Goal: +3.09%)
+...-> QIWI for 452857.0
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:50:49.317075 utc time
+Account 0:
+=3941727.4 total
+-----
+Rub: 1389928.3
+PMSBP -0.46% : 1276308.0 -> 1270500.0 (Goal: +2.81%)
+ORUP -0.08% : 1282355.5 -> 1281299.2 (Goal: +1.57%)
+...-> QIWI for 458569.4
+
+Account 1:
+=3895305.7 total
+-----
+Rub: 1372593.8
+PMSBP -0.46% : 1262244.0 -> 1256500.0 (Goal: +2.81%)
+ORUP -0.08% : 1267255.8 -> 1266211.9 (Goal: +3.09%)
+...-> QIWI for 452857.0
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+07:55:50.995753 utc time
+Account 0:
+=3938823.4 total
+-----
+Rub: 1389928.3
+PMSBP -0.68% : 1276308.0 -> 1267596.0 (Goal: +2.81%)
+ORUP -0.08% : 1282355.5 -> 1281299.2 (Goal: +1.57%)
+...-> QIWI for 458569.4
+
+Account 1:
+=3892433.7 total
+-----
+Rub: 1372593.8
+PMSBP -0.68% : 1262244.0 -> 1253628.0 (Goal: +2.81%)
+ORUP -0.08% : 1267255.8 -> 1266211.9 (Goal: +3.09%)
+...-> QIWI for 452857.0
+
+>>> BUY STAGE
+Waiting for 5 minutes
+=======
+08:00:52.477834 utc time
+Account 0:
+=3951499.1 total
+-----
+Rub: 1389928.3
+PMSBP -0.68% : 1276308.0 -> 1267596.0 (Goal: +2.81%)
+ORUP 0.91% : 1282355.5 -> 1293974.9 (Goal: +1.57%)
+...-> QIWI for 458569.4
+
+Account 1:
+=3904960.1 total
+-----
+Rub: 1372593.8
+PMSBP -0.68% : 1262244.0 -> 1253628.0 (Goal: +2.81%)
+ORUP 0.91% : 1267255.8 -> 1278738.3 (Goal: +3.09%)
+...-> QIWI for 452857.0
+
+>>> SELL STAGE
+0: Cancelling staled buy order for QIWI
+CancelOrderResponse(time=datetime.datetime(2024, 5, 13, 8, 0, 53, 919789, tzinfo=datetime.timezone.utc), response_metadata=ResponseMetadata(tracking_id='fdefb35e25510eaf6e912bc67eb2dc17', server_time=datetime.datetime(2024, 5, 13, 8, 0, 53, 922042, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+08:00:55.003477 utc time
+Account 0:
+=3951499.1 total
+-----
+Rub: 1389928.3
+PMSBP -0.68% : 1276308.0 -> 1267596.0 (Goal: +2.81%)
+ORUP 0.91% : 1282355.5 -> 1293974.9 (Goal: +1.57%)
+
+Account 1:
+=3904960.1 total
+-----
+Rub: 1372593.8
+PMSBP -0.68% : 1262244.0 -> 1253628.0 (Goal: +2.81%)
+ORUP 0.91% : 1267255.8 -> 1278738.3 (Goal: +3.09%)
+...-> QIWI for 452857.0
+
+>>> SELL STAGE
+1: Cancelling staled buy order for QIWI
+CancelOrderResponse(time=datetime.datetime(2024, 5, 13, 8, 0, 56, 336122, tzinfo=datetime.timezone.utc), response_metadata=ResponseMetadata(tracking_id='34509b6e197f33f6adef55d3b363a31f', server_time=datetime.datetime(2024, 5, 13, 8, 0, 56, 338749, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+08:00:57.423960 utc time
+Account 0:
+=3951499.1 total
+-----
+Rub: 1389928.3
+PMSBP -0.68% : 1276308.0 -> 1267596.0 (Goal: +2.81%)
+ORUP 0.91% : 1282355.5 -> 1293974.9 (Goal: +1.57%)
+
+Account 1:
+=3904960.1 total
+-----
+Rub: 1372593.8
+PMSBP -0.68% : 1262244.0 -> 1253628.0 (Goal: +2.81%)
+ORUP 0.91% : 1267255.8 -> 1278738.3 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+08:10:58.755679 utc time
+Account 0:
+=3925363.1 total
+-----
+Rub: 1389928.3
+PMSBP -2.73% : 1276308.0 -> 1241460.0 (Goal: +2.81%)
+ORUP 0.91% : 1282355.5 -> 1293974.9 (Goal: +1.57%)
+
+Account 1:
+=3879112.1 total
+-----
+Rub: 1372593.8
+PMSBP -2.73% : 1262244.0 -> 1227780.0 (Goal: +2.81%)
+ORUP 0.91% : 1267255.8 -> 1278738.3 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+08:21:00.249749 utc time
+Account 0:
+=3937913.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.73% : 1276308.0 -> 1241460.0 (Goal: +2.81%)
+
+Account 1:
+=3879112.1 total
+-----
+Rub: 1372593.8
+PMSBP -2.73% : 1262244.0 -> 1227780.0 (Goal: +2.81%)
+ORUP 0.91% : 1267255.8 -> 1278738.3 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+08:31:02.007242 utc time
+Account 0:
+=3948077.3 total
+-----
+Rub: 2696453.3
+PMSBP -1.93% : 1276308.0 -> 1251624.0 (Goal: +2.81%)
+
+Account 1:
+=3889164.1 total
+-----
+Rub: 1372593.8
+PMSBP -1.93% : 1262244.0 -> 1237832.0 (Goal: +2.81%)
+ORUP 0.91% : 1267255.8 -> 1278738.3 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+08:41:03.695714 utc time
+Account 0:
+=3946625.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.05% : 1276308.0 -> 1250172.0 (Goal: +2.81%)
+
+Account 1:
+=3887728.1 total
+-----
+Rub: 1372593.8
+PMSBP -2.05% : 1262244.0 -> 1236396.0 (Goal: +2.81%)
+ORUP 0.91% : 1267255.8 -> 1278738.3 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+08:51:05.193445 utc time
+Account 0:
+=3939365.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.62% : 1276308.0 -> 1242912.0 (Goal: +2.81%)
+
+Account 1:
+=3880548.1 total
+-----
+Rub: 1372593.8
+PMSBP -2.62% : 1262244.0 -> 1229216.0 (Goal: +2.81%)
+ORUP 0.91% : 1267255.8 -> 1278738.3 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+09:01:06.730516 utc time
+Account 0:
+=3934283.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.01% : 1276308.0 -> 1237830.0 (Goal: +2.81%)
+
+Account 1:
+=3880741.4 total
+-----
+Rub: 1372593.8
+PMSBP -3.01% : 1262244.0 -> 1224190.0 (Goal: +2.81%)
+ORUP 1.32% : 1267255.8 -> 1283957.6 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+09:11:08.241268 utc time
+Account 0:
+=3919763.3 total
+-----
+Rub: 2696453.3
+PMSBP -4.15% : 1276308.0 -> 1223310.0 (Goal: +2.81%)
+
+Account 1:
+=3851245.3 total
+-----
+Rub: 1372593.8
+PMSBP -4.15% : 1262244.0 -> 1209830.0 (Goal: +2.81%)
+ORUP 0.12% : 1267255.8 -> 1268821.6 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+09:21:09.787265 utc time
+Account 0:
+=3935735.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.90% : 1276308.0 -> 1239282.0 (Goal: +2.81%)
+
+Account 1:
+=3867041.3 total
+-----
+Rub: 1372593.8
+PMSBP -2.90% : 1262244.0 -> 1225626.0 (Goal: +2.81%)
+ORUP 0.12% : 1267255.8 -> 1268821.6 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+09:31:11.299324 utc time
+Account 0:
+=3942269.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.39% : 1276308.0 -> 1245816.0 (Goal: +2.81%)
+
+Account 1:
+=3891771.0 total
+-----
+Rub: 1372593.8
+PMSBP -2.39% : 1262244.0 -> 1232088.0 (Goal: +2.81%)
+ORUP 1.57% : 1267255.8 -> 1287089.2 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+09:41:13.095656 utc time
+Account 0:
+=3939365.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.62% : 1276308.0 -> 1242912.0 (Goal: +2.81%)
+
+Account 1:
+=3870631.3 total
+-----
+Rub: 1372593.8
+PMSBP -2.62% : 1262244.0 -> 1229216.0 (Goal: +2.81%)
+ORUP 0.12% : 1267255.8 -> 1268821.6 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+09:51:14.776534 utc time
+Account 0:
+=3942269.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.39% : 1276308.0 -> 1245816.0 (Goal: +2.81%)
+
+Account 1:
+=3873503.3 total
+-----
+Rub: 1372593.8
+PMSBP -2.39% : 1262244.0 -> 1232088.0 (Goal: +2.81%)
+ORUP 0.12% : 1267255.8 -> 1268821.6 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+10:01:16.317793 utc time
+Account 0:
+=3945173.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.16% : 1276308.0 -> 1248720.0 (Goal: +2.81%)
+
+Account 1:
+=3889945.6 total
+-----
+Rub: 1372593.8
+PMSBP -2.16% : 1262244.0 -> 1234960.0 (Goal: +2.81%)
+ORUP 1.19% : 1267255.8 -> 1282391.8 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+10:11:18.133987 utc time
+Account 0:
+=3943721.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.28% : 1276308.0 -> 1247268.0 (Goal: +2.81%)
+
+Account 1:
+=3888509.6 total
+-----
+Rub: 1372593.8
+PMSBP -2.28% : 1262244.0 -> 1233524.0 (Goal: +2.81%)
+ORUP 1.19% : 1267255.8 -> 1282391.8 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+10:21:19.716177 utc time
+Account 0:
+=3946625.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.05% : 1276308.0 -> 1250172.0 (Goal: +2.81%)
+
+Account 1:
+=3878855.2 total
+-----
+Rub: 1372593.8
+PMSBP -2.05% : 1262244.0 -> 1236396.0 (Goal: +2.81%)
+ORUP 0.21% : 1267255.8 -> 1269865.4 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+10:31:22.192113 utc time
+Account 0:
+=3941543.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.45% : 1276308.0 -> 1245090.0 (Goal: +2.81%)
+
+Account 1:
+=3873829.2 total
+-----
+Rub: 1372593.8
+PMSBP -2.45% : 1262244.0 -> 1231370.0 (Goal: +2.81%)
+ORUP 0.21% : 1267255.8 -> 1269865.4 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+10:41:23.782604 utc time
+Account 0:
+=3947351.3 total
+-----
+Rub: 2696453.3
+PMSBP -1.99% : 1276308.0 -> 1250898.0 (Goal: +2.81%)
+
+Account 1:
+=3891577.7 total
+-----
+Rub: 1372593.8
+PMSBP -1.99% : 1262244.0 -> 1237114.0 (Goal: +2.81%)
+ORUP 1.15% : 1267255.8 -> 1281869.9 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+10:51:25.302127 utc time
+Account 0:
+=3934283.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.01% : 1276308.0 -> 1237830.0 (Goal: +2.81%)
+
+Account 1:
+=3878653.7 total
+-----
+Rub: 1372593.8
+PMSBP -3.01% : 1262244.0 -> 1224190.0 (Goal: +2.81%)
+ORUP 1.15% : 1267255.8 -> 1281869.9 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+11:01:26.827034 utc time
+Account 0:
+=3941543.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.45% : 1276308.0 -> 1245090.0 (Goal: +2.81%)
+
+Account 1:
+=3885833.7 total
+-----
+Rub: 1372593.8
+PMSBP -2.45% : 1262244.0 -> 1231370.0 (Goal: +2.81%)
+ORUP 1.15% : 1267255.8 -> 1281869.9 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+11:11:28.616670 utc time
+Account 0:
+=3942269.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.39% : 1276308.0 -> 1245816.0 (Goal: +2.81%)
+
+Account 1:
+=3872981.4 total
+-----
+Rub: 1372593.8
+PMSBP -2.39% : 1262244.0 -> 1232088.0 (Goal: +2.81%)
+ORUP 0.08% : 1267255.8 -> 1268299.6 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+11:21:30.096268 utc time
+Account 0:
+=3924845.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.75% : 1276308.0 -> 1228392.0 (Goal: +2.81%)
+
+Account 1:
+=3868275.8 total
+-----
+Rub: 1372593.8
+PMSBP -3.75% : 1262244.0 -> 1214856.0 (Goal: +2.81%)
+ORUP 1.07% : 1267255.8 -> 1280826.0 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+11:31:31.741042 utc time
+Account 0:
+=3922667.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.92% : 1276308.0 -> 1226214.0 (Goal: +2.81%)
+
+Account 1:
+=3852551.5 total
+-----
+Rub: 1372593.8
+PMSBP -3.92% : 1262244.0 -> 1212702.0 (Goal: +2.81%)
+ORUP 0.00% : 1267255.8 -> 1267255.8 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+11:41:33.152688 utc time
+Account 0:
+=3919763.3 total
+-----
+Rub: 2696453.3
+PMSBP -4.15% : 1276308.0 -> 1223310.0 (Goal: +2.81%)
+
+Account 1:
+=3848635.7 total
+-----
+Rub: 1372593.8
+PMSBP -4.15% : 1262244.0 -> 1209830.0 (Goal: +2.81%)
+ORUP -0.08% : 1267255.8 -> 1266211.9 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+11:51:34.695255 utc time
+Account 0:
+=3913955.3 total
+-----
+Rub: 2696453.3
+PMSBP -4.61% : 1276308.0 -> 1217502.0 (Goal: +2.81%)
+
+Account 1:
+=3843935.5 total
+-----
+Rub: 1372593.8
+PMSBP -4.61% : 1262244.0 -> 1204086.0 (Goal: +2.81%)
+ORUP 0.00% : 1267255.8 -> 1267255.8 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+12:01:36.259821 utc time
+Account 0:
+=3925571.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.70% : 1276308.0 -> 1229118.0 (Goal: +2.81%)
+
+Account 1:
+=3856467.4 total
+-----
+Rub: 1372593.8
+PMSBP -3.70% : 1262244.0 -> 1215574.0 (Goal: +2.81%)
+ORUP 0.08% : 1267255.8 -> 1268299.6 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+12:11:37.903697 utc time
+Account 0:
+=3928475.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.47% : 1276308.0 -> 1232022.0 (Goal: +2.81%)
+
+Account 1:
+=3859339.4 total
+-----
+Rub: 1372593.8
+PMSBP -3.47% : 1262244.0 -> 1218446.0 (Goal: +2.81%)
+ORUP 0.08% : 1267255.8 -> 1268299.6 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+12:21:39.575979 utc time
+Account 0:
+=3926297.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.64% : 1276308.0 -> 1229844.0 (Goal: +2.81%)
+
+Account 1:
+=3868667.9 total
+-----
+Rub: 1372593.8
+PMSBP -3.64% : 1262244.0 -> 1216292.0 (Goal: +2.81%)
+ORUP 0.99% : 1267255.8 -> 1279782.2 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+12:31:41.074500 utc time
+Account 0:
+=3931379.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.24% : 1276308.0 -> 1234926.0 (Goal: +2.81%)
+
+Account 1:
+=3861167.5 total
+-----
+Rub: 1372593.8
+PMSBP -3.24% : 1262244.0 -> 1221318.0 (Goal: +2.81%)
+ORUP 0.00% : 1267255.8 -> 1267255.8 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+12:41:42.646754 utc time
+Account 0:
+=3927023.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.58% : 1276308.0 -> 1230570.0 (Goal: +2.81%)
+
+Account 1:
+=3856859.5 total
+-----
+Rub: 1372593.8
+PMSBP -3.58% : 1262244.0 -> 1217010.0 (Goal: +2.81%)
+ORUP 0.00% : 1267255.8 -> 1267255.8 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+12:51:44.175162 utc time
+Account 0:
+=3937913.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.73% : 1276308.0 -> 1241460.0 (Goal: +2.81%)
+
+Account 1:
+=3879112.1 total
+-----
+Rub: 1372593.8
+PMSBP -2.73% : 1262244.0 -> 1227780.0 (Goal: +2.81%)
+ORUP 0.91% : 1267255.8 -> 1278738.3 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+13:01:45.731645 utc time
+Account 0:
+=3937913.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.73% : 1276308.0 -> 1241460.0 (Goal: +2.81%)
+
+Account 1:
+=3863454.0 total
+-----
+Rub: 1372593.8
+PMSBP -2.73% : 1262244.0 -> 1227780.0 (Goal: +2.81%)
+ORUP -0.33% : 1267255.8 -> 1263080.3 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+13:11:47.261985 utc time
+Account 0:
+=3932105.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.19% : 1276308.0 -> 1235652.0 (Goal: +2.81%)
+
+Account 1:
+=3872324.2 total
+-----
+Rub: 1372593.8
+PMSBP -3.19% : 1262244.0 -> 1222036.0 (Goal: +2.81%)
+ORUP 0.82% : 1267255.8 -> 1277694.4 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+13:21:48.686878 utc time
+Account 0:
+=3930653.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.30% : 1276308.0 -> 1234200.0 (Goal: +2.81%)
+
+Account 1:
+=3870888.2 total
+-----
+Rub: 1372593.8
+PMSBP -3.30% : 1262244.0 -> 1220600.0 (Goal: +2.81%)
+ORUP 0.82% : 1267255.8 -> 1277694.4 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+13:31:50.359252 utc time
+Account 0:
+=3932105.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.19% : 1276308.0 -> 1235652.0 (Goal: +2.81%)
+
+Account 1:
+=3860319.7 total
+-----
+Rub: 1372593.8
+PMSBP -3.19% : 1262244.0 -> 1222036.0 (Goal: +2.81%)
+ORUP -0.12% : 1267255.8 -> 1265689.9 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+13:41:51.805738 utc time
+Account 0:
+=3930653.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.30% : 1276308.0 -> 1234200.0 (Goal: +2.81%)
+
+Account 1:
+=3858883.7 total
+-----
+Rub: 1372593.8
+PMSBP -3.30% : 1262244.0 -> 1220600.0 (Goal: +2.81%)
+ORUP -0.12% : 1267255.8 -> 1265689.9 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+13:51:53.460520 utc time
+Account 0:
+=3935735.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.90% : 1276308.0 -> 1239282.0 (Goal: +2.81%)
+
+Account 1:
+=3863909.7 total
+-----
+Rub: 1372593.8
+PMSBP -2.90% : 1262244.0 -> 1225626.0 (Goal: +2.81%)
+ORUP -0.12% : 1267255.8 -> 1265689.9 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+14:01:54.996452 utc time
+Account 0:
+=3935009.3 total
+-----
+Rub: 2696453.3
+PMSBP -2.96% : 1276308.0 -> 1238556.0 (Goal: +2.81%)
+
+Account 1:
+=3863191.7 total
+-----
+Rub: 1372593.8
+PMSBP -2.96% : 1262244.0 -> 1224908.0 (Goal: +2.81%)
+ORUP -0.12% : 1267255.8 -> 1265689.9 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+14:11:56.674451 utc time
+Account 0:
+=3932831.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.13% : 1276308.0 -> 1236378.0 (Goal: +2.81%)
+
+Account 1:
+=3861037.7 total
+-----
+Rub: 1372593.8
+PMSBP -3.13% : 1262244.0 -> 1222754.0 (Goal: +2.81%)
+ORUP -0.12% : 1267255.8 -> 1265689.9 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+14:21:58.223485 utc time
+Account 0:
+=3930653.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.30% : 1276308.0 -> 1234200.0 (Goal: +2.81%)
+
+Account 1:
+=3858883.7 total
+-----
+Rub: 1372593.8
+PMSBP -3.30% : 1262244.0 -> 1220600.0 (Goal: +2.81%)
+ORUP -0.12% : 1267255.8 -> 1265689.9 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+14:31:59.895918 utc time
+Account 0:
+=3925571.3 total
+-----
+Rub: 2696453.3
+PMSBP -3.70% : 1276308.0 -> 1229118.0 (Goal: +2.81%)
+
+Account 1:
+=3863252.5 total
+-----
+Rub: 1372593.8
+PMSBP -3.70% : 1262244.0 -> 1215574.0 (Goal: +2.81%)
+ORUP 0.62% : 1267255.8 -> 1275084.8 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+14:42:01.599871 utc time
+Account 0:
+=3921215.3 total
+-----
+Rub: 2696453.3
+PMSBP -4.04% : 1276308.0 -> 1224762.0 (Goal: +2.81%)
+
+Account 1:
+=3850071.7 total
+-----
+Rub: 1372593.8
+PMSBP -4.04% : 1262244.0 -> 1211266.0 (Goal: +2.81%)
+ORUP -0.08% : 1267255.8 -> 1266211.9 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+14:52:03.291805 utc time
+Account 0:
+=3905243.3 total
+-----
+Rub: 2696453.3
+PMSBP -5.29% : 1276308.0 -> 1208790.0 (Goal: +2.81%)
+
+Account 1:
+=3844714.3 total
+-----
+Rub: 1372593.8
+PMSBP -5.29% : 1262244.0 -> 1195470.0 (Goal: +2.81%)
+ORUP 0.74% : 1267255.8 -> 1276650.6 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+15:02:04.936040 utc time
+Account 0:
+=3915407.3 total
+-----
+Rub: 2696453.3
+PMSBP -4.49% : 1276308.0 -> 1218954.0 (Goal: +2.81%)
+
+Account 1:
+=3844327.7 total
+-----
+Rub: 1372593.8
+PMSBP -4.49% : 1262244.0 -> 1205522.0 (Goal: +2.81%)
+ORUP -0.08% : 1267255.8 -> 1266211.9 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+15:12:06.235926 utc time
+Account 0:
+=3908147.3 total
+-----
+Rub: 2696453.3
+PMSBP -5.06% : 1276308.0 -> 1211694.0 (Goal: +2.81%)
+
+Account 1:
+=3837147.7 total
+-----
+Rub: 1372593.8
+PMSBP -5.06% : 1262244.0 -> 1198342.0 (Goal: +2.81%)
+ORUP -0.08% : 1267255.8 -> 1266211.9 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+15:22:07.885073 utc time
+Account 0:
+=3919037.3 total
+-----
+Rub: 2696453.3
+PMSBP -4.21% : 1276308.0 -> 1222584.0 (Goal: +2.81%)
+
+Account 1:
+=3845308.0 total
+-----
+Rub: 1372593.8
+PMSBP -4.21% : 1262244.0 -> 1209112.0 (Goal: +2.81%)
+ORUP -0.29% : 1267255.8 -> 1263602.2 (Goal: +3.09%)
+
+>>> SELL STAGE
+Waiting for 10 minutes
+=======
+15:32:09.575585 utc time
+Account 0:
+=3916859.3 total
+-----
+Rub: 2696453.3
+PMSBP -4.38% : 1276308.0 -> 1220406.0 (Goal: +2.81%)
+
+Account 1:
+=3843154.0 total
+-----
+Rub: 1372593.8
+PMSBP -4.38% : 1262244.0 -> 1206958.0 (Goal: +2.81%)
+ORUP -0.29% : 1267255.8 -> 1263602.2 (Goal: +3.09%)
+
+>>> SELL STAGE
+0: Cancelling staled sell order for PMSBP
+CancelOrderResponse(time=datetime.datetime(2024, 5, 13, 15, 32, 11, 174926, tzinfo=datetime.timezone.utc), response_metadata=ResponseMetadata(tracking_id='bebca8795b6716e7a667382f8ff7153a', server_time=datetime.datetime(2024, 5, 13, 15, 32, 11, 177978, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+15:32:12.274859 utc time
+Account 0:
+=3916859.3 total
+-----
+Rub: 2696453.3
+PMSBP -4.38% : 1276308.0 -> 1220406.0 (Goal: +2.81%)
+
+Account 1:
+=3843154.0 total
+-----
+Rub: 1372593.8
+PMSBP -4.38% : 1262244.0 -> 1206958.0 (Goal: +2.81%)
+ORUP -0.29% : 1267255.8 -> 1263602.2 (Goal: +3.09%)
+
+>>> SELL STAGE
+0: Market price sell on exchange closing for PMSBP
+PostOrderResponse(order_id='aff6a59c-817e-4cec-b065-f9b38cfe9570', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=363, lots_executed=363, initial_order_price=MoneyValue(currency='rub', units=1220406, nano=0), executed_order_price=MoneyValue(currency='rub', units=336, nano=200000000), total_order_amount=MoneyValue(currency='rub', units=1220406, nano=0), initial_commission=MoneyValue(currency='rub', units=610, nano=203000000), executed_commission=MoneyValue(currency='rub', units=610, nano=203000000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG000MZL2S9', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=336, nano=200000000), order_type=<OrderType.ORDER_TYPE_MARKET: 2>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='80a39145-b2f7-46f5-9ef0-1478baafb0a6', order_request_id='7d7ecf5c-87dc-47d5-8dd3-97f3542449f8', response_metadata=ResponseMetadata(tracking_id='60098bc916feb9217e0ab7fa6d110f0d', server_time=datetime.datetime(2024, 5, 13, 15, 32, 13, 624196, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+15:32:14.709291 utc time
+Account 0:
+=3916249.1 total
+-----
+Rub: 3916249.1
+
+Account 1:
+=3843154.0 total
+-----
+Rub: 1372593.8
+PMSBP -4.38% : 1262244.0 -> 1206958.0 (Goal: +2.81%)
+ORUP -0.29% : 1267255.8 -> 1263602.2 (Goal: +3.09%)
+
+>>> SELL STAGE
+1: Cancelling staled sell order for ORUP
+CancelOrderResponse(time=datetime.datetime(2024, 5, 13, 15, 32, 16, 49629, tzinfo=datetime.timezone.utc), response_metadata=ResponseMetadata(tracking_id='273db602bb8a61c098a7172c8a755625', server_time=datetime.datetime(2024, 5, 13, 15, 32, 16, 53949, tzinfo=datetime.timezone.utc)))
+1: Cancelling staled sell order for PMSBP
+CancelOrderResponse(time=datetime.datetime(2024, 5, 13, 15, 32, 16, 196109, tzinfo=datetime.timezone.utc), response_metadata=ResponseMetadata(tracking_id='659a4c6ee062f1a4ddb422c7d44bacaa', server_time=datetime.datetime(2024, 5, 13, 15, 32, 16, 198354, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+15:32:17.286692 utc time
+Account 0:
+=3916249.1 total
+-----
+Rub: 3916249.1
+
+Account 1:
+=3843154.0 total
+-----
+Rub: 1372593.8
+PMSBP -4.38% : 1262244.0 -> 1206958.0 (Goal: +2.81%)
+ORUP -0.29% : 1267255.8 -> 1263602.2 (Goal: +3.09%)
+
+>>> SELL STAGE
+1: Market price sell on exchange closing for ORUP
+PostOrderResponse(order_id='445e1b9c-4d5c-4809-b5d5-41e9b6cf9cdc', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=521934, lots_executed=521934, initial_order_price=MoneyValue(currency='rub', units=1263602, nano=214000000), executed_order_price=MoneyValue(currency='rub', units=2, nano=421000000), total_order_amount=MoneyValue(currency='rub', units=1263602, nano=214000000), initial_commission=MoneyValue(currency='rub', units=631, nano=801107000), executed_commission=MoneyValue(currency='rub', units=631, nano=801107000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG001BBGNS2', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=2, nano=421000000), order_type=<OrderType.ORDER_TYPE_MARKET: 2>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='85d3979a-8e8c-4652-8b61-2c020613ee70', order_request_id='898fc628-87d7-43f7-86e0-407f5a9c2367', response_metadata=ResponseMetadata(tracking_id='47a9f9f8ec214d41369ca42ff5fbc0ee', server_time=datetime.datetime(2024, 5, 13, 15, 32, 18, 639057, tzinfo=datetime.timezone.utc)))
+1: Market price sell on exchange closing for PMSBP
+PostOrderResponse(order_id='956e85f2-b487-4ba3-b53b-a3887172e8ee', execution_report_status=<OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL: 1>, lots_requested=359, lots_executed=359, initial_order_price=MoneyValue(currency='rub', units=1206958, nano=0), executed_order_price=MoneyValue(currency='rub', units=336, nano=200000000), total_order_amount=MoneyValue(currency='rub', units=1206958, nano=0), initial_commission=MoneyValue(currency='rub', units=603, nano=479000000), executed_commission=MoneyValue(currency='rub', units=603, nano=479000000), aci_value=MoneyValue(currency='', units=0, nano=0), figi='BBG000MZL2S9', direction=<OrderDirection.ORDER_DIRECTION_SELL: 2>, initial_security_price=MoneyValue(currency='rub', units=336, nano=200000000), order_type=<OrderType.ORDER_TYPE_MARKET: 2>, message='', initial_order_price_pt=Quotation(units=0, nano=0), instrument_uid='80a39145-b2f7-46f5-9ef0-1478baafb0a6', order_request_id='f85ec8b5-bb76-4468-88cc-5fb579d46b50', response_metadata=ResponseMetadata(tracking_id='cde0f0fee557e155833644cd511e1809', server_time=datetime.datetime(2024, 5, 13, 15, 32, 18, 801161, tzinfo=datetime.timezone.utc)))
+Waiting for 1 seconds
+=======
+15:32:19.884184 utc time
+Account 0:
+=3916249.1 total
+-----
+Rub: 3916249.1
+
+Account 1:
+=3841918.7 total
+-----
+Rub: 3841918.7
+
+>>> SELL STAGE
+No positions to sell anymore
+Waiting for 120 minutes

@@ -19,7 +19,7 @@ def getDerivativeWeights(d, sigma=0.1, count=0):
 ws = []
 ws.append(getDerivativeWeights(0.1, 0.01, 30))
 ws.append(getDerivativeWeights(0.15, 0.01, 30))
-ws.append(getDerivativeWeights(0.25, 0.01, 30))
+ws.append(getDerivativeWeights(0.25 0.01, 30))
 ws.append(getDerivativeWeights(0.35, 0.01, 30))
 ws.append(getDerivativeWeights(0.5, 0.01, 30))
 ws.append(getDerivativeWeights(0.7, 0.01, 30))
@@ -97,7 +97,7 @@ class FeaturesCreation(): #class to process candles to make features for train, 
         instInfo[inst]["maxVolume"][i] = max(instInfo[inst]["maxVolume"][i-1], instInfo[inst]["volume"][i])
         #open derivative
         if i >= 30:
-          instInfo[inst]["openDeriv"][i] = (ws[3] * instInfo[inst]["open"][i-29:i+1]).sum()
+          instInfo[inst]["openDeriv"][i] = (ws[2] * instInfo[inst]["open"][i-29:i+1]).sum()
           
         #mean abs return
         DAYS_RET = 200

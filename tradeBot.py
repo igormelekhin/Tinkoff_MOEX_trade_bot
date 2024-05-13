@@ -412,11 +412,17 @@ class TradeBot(): #class to trade stocks using predicts from trained models
     operationHistories = []
     with tinkoff.invest.Client(self.token, target=tinkoff.invest.constants.INVEST_GRPC_API_SANDBOX, app_name = self.app_name) as client:
       for accountNum in range(len(self.accountIDs)):
-        response = client.operations.get_operations(account_id = self.accountIDs[accountNum])
+        operations = []
+        date = datetime.datetime(2024, 4, 1, 0, 0, 0)
+        now = datetime.datetime.utcnow()
+        while date < now:
+          response = client.operations.get_operations(account_id = self.accountIDs[accountNum], from_=date, to=date + datetime.timedelta(days=7))
+          operations.extend(response.operations)
+          date += datetime.timedelta(days=7)
         actions = []
-        operationHistories.append({"totalMoney" : 0, "actions" : actions, "dayResults" : {}})
+        operationHistories.append({"totalMoney" : 0, "actions" : actions})
         lastBuys = {}
-        for operation in response.operations:
+        for operation in operations:
           if operation.type == "Завод денежных средств":
             operationHistories[-1]["totalMoney"] += operation.payment.units + operation.payment.nano * 10**(-9)
           if operation.type == "Покупка ЦБ":

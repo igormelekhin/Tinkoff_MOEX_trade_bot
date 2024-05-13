@@ -18,7 +18,9 @@ class DataStorage(): #class to download and store list of instruments and candle
   ############################################################################################################    
 
   def getInstrumentsMetainfo(self, force=False):
+    #Get list of instruments with description of each instrument
     FILENAME = "data/instruments.pickle"
+    #if it saved in file, read it and return
     if (not force) and os.path.exists(FILENAME):
       with open(FILENAME, "rb") as f:
         self.instMetainfo = pickle.load(f)
@@ -28,9 +30,10 @@ class DataStorage(): #class to download and store list of instruments and candle
     with tinkoff.invest.Client(self.token, target=tinkoff.invest.constants.INVEST_GRPC_API_SANDBOX) as client:
       shares = client.instruments.shares()
       for share in shares.instruments:
+        #get shares only from MOEX for Rub, which can be bought and sold
         if share.currency == "rub" and share.real_exchange == tinkoff.invest.RealExchange.REAL_EXCHANGE_MOEX and share.buy_available_flag and share.sell_available_flag:
           instMetainfoList.append(share)
-    #save
+    #save into file
     self.instMetainfo = {}
     for inst in instMetainfoList:
       self.instMetainfo[inst.figi] = inst
@@ -65,6 +68,7 @@ class DataStorage(): #class to download and store list of instruments and candle
   ############################################################################################################
 
   def needNewCandles(self):
+    #Is it required to get new candles now
     DATE_FILENAME = "data/lastCandleDate.pickle"
     if os.path.exists(DATE_FILENAME):
       with open(DATE_FILENAME, "rb") as f:
@@ -76,7 +80,9 @@ class DataStorage(): #class to download and store list of instruments and candle
   ############################################################################################################
     
   def downloadCandles(self, period = 150, retries=3, clear=False, verb=0):
+    #Download new candles for each instrument, but not more then <period> days. In case of fails retry several times
     DATE_FILENAME = "data/lastCandleDate.pickle"
+    #get last date from file
     if os.path.exists(DATE_FILENAME) and (not clear):
       with open(DATE_FILENAME, "rb") as f:
         lastDate = pickle.load(f)

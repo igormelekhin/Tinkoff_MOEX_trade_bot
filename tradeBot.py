@@ -47,6 +47,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
   ############################################################################################################
 
   def printLogs(self, text, accounts=-1, bPrint=True):
+    #Print text and add for queue to be written into files
     if bPrint:
       print(text)
     self.logs[-1] += text + "\n" #every message to global log file
@@ -59,6 +60,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
   ############################################################################################################
 
   def flushLogs(self):
+    #Write recent logs into files
     for logNum in range(len(self.logs)):
       if logNum == len(self.logs) - 1:
         filename = "all_logs.txt"
@@ -207,6 +209,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
   ############################################################################################################
 
   def timeEvent(self):
+    #Find out current state and make appropriate actions for each account
     timeNow = datetime.datetime.utcnow().replace(tzinfo=pytz.timezone('UTC'))
     self.printLogs("=======")
     self.printLogs(str(timeNow.time()) + " utc time")
@@ -375,6 +378,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
   ############################################################################################################
 
   def getCurrentStatus(self, accountNum):
+    #Get text description of current portfolio, orders and chandes
     stRes = ""
     total = 0
     for position in self.portfolios[accountNum].positions:
@@ -404,6 +408,7 @@ class TradeBot(): #class to trade stocks using predicts from trained models
   ############################################################################################################
 
   def getOperationHistory(self):
+    #Get list of operations for each account
     operationHistories = []
     with tinkoff.invest.Client(self.token, target=tinkoff.invest.constants.INVEST_GRPC_API_SANDBOX, app_name = self.app_name) as client:
       for accountNum in range(len(self.accountIDs)):

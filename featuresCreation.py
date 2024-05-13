@@ -4,6 +4,7 @@ import numpy as np
 
 import defaultParameters
 
+#Coefficients for different derivatives
 def getDerivativeWeights(d, sigma=0.1, count=0):
   w = [1]
   if count == 0:
@@ -53,6 +54,7 @@ class FeaturesCreation(): #class to process candles to make features for train, 
   ############################################################################################################
     
   def getInstInfo(self, storeFilename="", rewrite=False):
+    #Calculate features for each candle of each used instrument
     if storeFilename != "" and os.path.exists(storeFilename) and rewrite == False:
       with open(storeFilename, "rb") as f:
         storedInfo = pickle.load(f)
@@ -175,6 +177,7 @@ class FeaturesCreation(): #class to process candles to make features for train, 
   ############################################################################################################
   
   def highScale(self, realVal, instInfo, ind, params):
+    #Scale high value according to stats of this instrument
     P = 1 / instInfo["meanHigh"][ind]
     integ = 1 - np.exp(-P*realVal)
     return integ
@@ -182,6 +185,7 @@ class FeaturesCreation(): #class to process candles to make features for train, 
   ############################################################################################################
   
   def highUnscale(self, scaledVal, instInfo, ind, params):
+    #Unscale high value according to stats of this instrument
     P = 1 / instInfo["meanHigh"][ind]
     realVal = np.log(1-scaledVal) / (-P)
     return realVal
@@ -189,6 +193,7 @@ class FeaturesCreation(): #class to process candles to make features for train, 
   ############################################################################################################
   
   def getBin(self, val, levels):
+    #Get bin numer for specified value and levels
     for i in range(len(levels)):
       if val < levels[i]:
         return i
@@ -197,6 +202,7 @@ class FeaturesCreation(): #class to process candles to make features for train, 
   ############################################################################################################
 
   def createXFrame(self, params, inst, ind):
+    #Get features for one example (one stock in the morning)
     instInfo = self.instInfo[inst]
     #mean volumes for last 3 and 30 days
     lastVol = instInfo["volume"][ind-2:ind+1].mean()
@@ -239,6 +245,7 @@ class FeaturesCreation(): #class to process candles to make features for train, 
   ############################################################################################################
   
   def createYFrame(self, params, instInfo, ind, high):
+    #Get bin numbers for one example (one stock in one day)
     if high: #Y dataset for highs
       o = instInfo["open"][ind]
       h = instInfo["high"][ind+1]
@@ -254,6 +261,7 @@ class FeaturesCreation(): #class to process candles to make features for train, 
   ############################################################################################################
 
   def createXYTrainDatasets(self, params={}):
+    #Collect X and Y datasets for train and validation
     if params == {}: params = self.currentParams
     print(params)
     dateToXFrames = {}
@@ -278,6 +286,7 @@ class FeaturesCreation(): #class to process candles to make features for train, 
   ############################################################################################################
   
   def createKFolds(self, dateToFrames, K=5, cutLastFrames=10, fromYear=2000, skipLastDays=0, params={}):
+    #Split dates into folds with train and test periods
     minDate, maxDate = None, None
     for date in dateToFrames:
       if date.year < fromYear: continue
@@ -315,6 +324,7 @@ class FeaturesCreation(): #class to process candles to make features for train, 
   ############################################################################################################
 
   def collectDataWithDatesList(self, dataByDates, datesList, column, needFullInfo=True, params={}):
+    #Get X and Y frames from dataset and periods from folds
     dataset = []
     fullInfo = []
     for date in datesList:
@@ -327,6 +337,7 @@ class FeaturesCreation(): #class to process candles to make features for train, 
   ############################################################################################################
 
   def createXPredDataset(self, params={}, lastDays=120):
+    #Create X dataset for predict
     dateToXFrames = {}
     minDate = datetime.datetime.utcnow().replace(tzinfo=pytz.timezone('UTC')) - datetime.timedelta(days=lastDays+1)
     lastDate = None

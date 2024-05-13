@@ -48,6 +48,7 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
   ############################################################################################################
   
   def calcGeomMeanOfOutcomes(self, outcomes):
+    #For a list of outcomes and probabilities get mean result
     prod = 1
     summ = 0
     for o in outcomes:
@@ -66,6 +67,7 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
   ############################################################################################################
   
   def calcOptimalTPandProfit(self, params, Y_preds_ret, Y_preds_high, Y_test_info, Y_pair_probs, spreads=None):
+    #For predicted probabilities of returns and high get optimal take profits and expected returns with this TP
     TPs, expectedProfits = np.zeros(len(Y_preds_ret)), np.zeros(len(Y_preds_ret))
     highLevels, retLevels = params["highLevels"], [-params["stopLoss"], *params["retLevels"]]
   
@@ -142,6 +144,7 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
   ############################################################################################################
   
   def runBacktest(self, params, dates, dateToYRetFrames, Y_profit_preds, Y_TP_preds, refsList, instStats, logFile="", verb=0):
+    #Run day-by-day trading simulation
     stats = {"takeProfitsAmount" : 0, "stopLossesAmount" : 0, "profitDealsAmount" : 0, "lossDealsAmount" : 0}
     bank = 1
     expectedOutcomes, optimalTPs, predsByDays, buysOutcomes, dayOutcomes, history, refs = [], [], [], [], [], [], []
@@ -237,11 +240,13 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
   ############################################################################################################
 
   def estimateMetrics(self, Y_true, Y_preds):
+    #Estimate quality of predictions
     return sklearn.metrics.log_loss(Y_true, Y_preds)
 
   ############################################################################################################
 
   def runTrain(self, params={}, refs=[], verb=1, saveTo="", logFile="", debugTrain=False):
+    #Main function to run train
     if params == {}: params = self.currentParams
     currentParams = params
     if verb > 0:
@@ -323,7 +328,7 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
       bestIters[-1].append(modelClass_ret.get_best_iteration())
       bestIters[-1].append(modelClass_high.get_best_iteration())
       
-      #backtest day-by-day simulation accoring to optimal TPs and expected returns
+      #backtest day-by-day simulation according to optimal TPs and expected returns
       backtestOutcome, backtestHistory, backtestRefs, newBuysOutcomes, newDayOutcomes, newExpectedOutcomes, newOptimalTPs, newLogs2File = self.runBacktest(currentParams, test, self.dateToYRetFrames, predRets, predTPs, refs, instStats, logFile=logFile, verb=verb)
       logs2File += newLogs2File
 
@@ -499,6 +504,7 @@ class StocksFitPredict(): #class to train models, perform trading simulation, es
   ############################################################################################################
 
   def runPredict(self, dateToXPredFrames, dates, model_ret, model_high, params={}, stats={}, verb=1):
+    #Get predicts with prepared features and models. Or estimate results for test days
     if params == {}: params = self.currentParams
     currentParams = params
     if verb > 0:
